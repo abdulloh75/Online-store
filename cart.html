@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Cart</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+
+<body class="bg-gray-100">
+
+  <!-- NAVBAR -->
+  <nav class="bg-[#1B6392] p-4 text-white font-semibold">
+    <div class="container mx-auto flex justify-between items-center">
+      <a href="index.html" class="text-2xl">CLICON</a>
+
+      <div class="flex items-center gap-6">
+        <a href="index.html" class="hover:underline">Home</a>
+        <a href="#" class="hover:underline border-b-2 pb-1">My Cart</a>
+        <a href="#" class="hover:underline">Profile</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- PAGE -->
+  <div class="container mx-auto mt-10 pb-20 px-5">
+
+    <h1 class="text-3xl font-bold mb-8">Shopping Cart</h1>
+
+    <!-- CART ITEMS -->
+    <div id="cart-items" class="bg-white shadow rounded p-6 divide-y divide-gray-200">
+    </div>
+
+    <!-- TOTAL BOX -->
+    <div class="mt-8 flex justify-end">
+      <div class="w-full sm:w-96 bg-white shadow rounded p-6">
+
+        <h2 class="text-xl font-bold mb-4">Order Summary</h2>
+
+        <div class="flex justify-between mb-2 text-gray-700">
+          <span>Subtotal</span>
+          <span id="subtotal">$0</span>
+        </div>
+
+        <div class="flex justify-between mb-4 text-gray-700">
+          <span>Shipping</span>
+          <span class="font-medium text-green-600">FREE</span>
+        </div>
+
+        <div class="flex justify-between text-lg font-bold border-t pt-3">
+          <span>Total</span>
+          <span id="total">$0</span>
+        </div>
+
+        <button class="mt-6 w-full bg-orange-500 text-white py-3 rounded font-semibold hover:bg-orange-600 transition">
+          Proceed to Checkout
+        </button>
+
+        <a href="index.html" class="block mt-4 text-center text-blue-500 font-medium hover:underline">
+          ← Continue Shopping
+        </a>
+
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function loadCart() {
+      const cart = JSON.parse(localStorage.getItem("cart")) || [];
+      const container = document.getElementById("cart-items");
+      container.innerHTML = "";
+
+      let subtotal = 0;
+
+      cart.forEach((item, i) => {
+
+        subtotal += item.price * item.qty;
+
+        container.innerHTML += `
+                <div class="flex items-center justify-between py-4">
+
+                    <div class="flex items-center gap-4">
+                        <img src="${item.thumbnail}" class="w-20 h-20 object-contain bg-gray-100 p-2 rounded">
+                        <div>
+                            <p class="font-semibold">${item.title}</p>
+                            <p class="text-sm text-gray-500">$${item.price}</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center gap-3">
+                        <button onclick="changeQty(${i}, -1)"
+                            class="w-8 h-8 bg-gray-200 rounded flex justify-center items-center font-bold">-</button>
+
+                        <span class="font-semibold">${item.qty}</span>
+
+                        <button onclick="changeQty(${i}, 1)"
+                            class="w-8 h-8 bg-gray-200 rounded flex justify-center items-center font-bold">+</button>
+                    </div>
+
+                    <p class="w-20 text-right font-semibold">$${item.price * item.qty}</p>
+
+                    <button onclick="deleteItem(${i})"
+                        class="text-red-500 text-xl hover:text-red-700">
+                        <i class="fa-solid fa-trash"></i>
+                    </button>
+                </div>
+                `;
+      });
+
+      document.getElementById("subtotal").innerText = "$" + subtotal;
+      document.getElementById("total").innerText = "$" + subtotal;
+    }
+
+    function changeQty(index, amount) {
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
+      cart[index].qty += amount;
+
+      if (cart[index].qty <= 0) cart[index].qty = 1;
+
+      localStorage.setItem("cart", JSON.stringify(cart));
+      loadCart();
+    }
+
+    function deleteItem(index) {
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
+      cart.splice(index, 1);
+      localStorage.setItem("cart", JSON.stringify(cart));
+      loadCart();
+    }
+
+    loadCart();
+  </script>
+
+</body>
+
+</html>
