@@ -25,41 +25,172 @@
     }
 
     .product-card {
-            position: relative;
-            overflow: hidden;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .hover-icons {
+        position: absolute;
+        top: 50%;
+        right: 5rem;
+        transform: translateY(-50%) translateX(100px);
+        transition: transform 0.3s ease;
+        display: flex;
+        gap: 0.5rem;
+        opacity: 0;
+        transition: all 0.3s ease;
+    }
+
+    .product-card:hover .hover-icons {
+        transform: translateY(-50%) translateX(0);
+        opacity: 1;
+    }
+
+    .hover-icon-btn {
+        width: 40px;
+        height: 40px;
+        background: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+        cursor: pointer;
+        transition: all 0.2s ease;
+    }
+
+    .hover-icon-btn:hover {
+        background: #f3f4f6;
+        transform: scale(1.1);
+    }
+
+    .scroll-track {
+        display: flex;
+        width: max-content;
+        animation: scroll-left 18s linear infinite;
+    }
+
+    @keyframes scroll-left {
+        0% {
+            transform: translateX(0);
         }
-        .hover-icons {
-            position: absolute;
-            top: 50%;
-            right: 5rem;
-            transform: translateY(-50%) translateX(100px);
-            transition: transform 0.3s ease;
-            display: flex;
-            gap: 0.5rem;
-            opacity: 0;
-            transition: all 0.3s ease;
+
+        100% {
+            transform: translateX(-50%);
         }
-        .product-card:hover .hover-icons {
-            transform: translateY(-50%) translateX(0);
-            opacity: 1;
-        }
-        .hover-icon-btn {
-            width: 40px;
-            height: 40px;
-            background: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-            cursor: pointer;
-            transition: all 0.2s ease;
-        }
-        .hover-icon-btn:hover {
-            background: #f3f4f6;
-            transform: scale(1.1);
-        }
+    }
 </style>
+
+
+<!-- Maxsulot ummumiy ko'rish -->
+<div id="product-modal" class="fixed inset-0 bg-black/40 hidden items-center justify-center z-50">
+    <div class="bg-white rounded-lg shadow-xl max-w-5xl w-full mx-4 relative">
+
+        <!-- Close button -->
+        <button onclick="closeProductModal()"
+            class="absolute top-4 right-4 w-9 h-9 rounded-full border flex items-center justify-center hover:bg-gray-100">
+            ✕
+        </button>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 p-8">
+            <!-- LEFT: IMAGE + THUMBNAILS -->
+            <div>
+                <!-- Katta rasm -->
+                <div class="border rounded-lg flex items-center justify-center mb-4 h-72">
+                    <img id="modal-main-image" src="" alt="Product image" class="max-h-64 object-contain">
+                </div>
+
+                <!-- Thumbnail lar -->
+                <div class="flex items-center gap-2">
+                    <button id="thumb-prev"
+                        class="w-8 h-8 rounded-full border flex items-center justify-center hover:bg-gray-100">
+                        <i class="fas fa-chevron-left text-xs"></i>
+                    </button>
+
+                    <div id="modal-thumbs" class="flex-1 flex gap-2 overflow-x-auto">
+                        <!-- js orqali rasmlar tushadi -->
+                    </div>
+
+                    <button id="thumb-next"
+                        class="w-8 h-8 rounded-full border flex items-center justify-center hover:bg-gray-100">
+                        <i class="fas fa-chevron-right text-xs"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- RIGHT: DETAILS -->
+            <div class="flex flex-col">
+                <!-- Rating -->
+                <div class="flex items-center gap-2 mb-1">
+                    <div id="modal-rating-stars" class="flex text-yellow-400 text-xs"></div>
+                    <span id="modal-rating-text" class="text-xs text-gray-500"></span>
+                </div>
+
+                <!-- Title -->
+                <h2 id="modal-title" class="text-2xl font-semibold text-gray-900 mb-1"></h2>
+
+                <!-- SKU / Brand optional -->
+                <div class="text-xs text-gray-500 mb-3">
+                    <span id="modal-brand"></span>
+                </div>
+
+                <!-- Price -->
+                <div class="flex items-end gap-3 mb-3">
+                    <span id="modal-price" class="text-2xl font-bold text-blue-600"></span>
+                    <span id="modal-old-price" class="text-sm text-gray-400 line-through"></span>
+                    <span id="modal-discount"
+                        class="text-xs font-semibold text-white bg-yellow-400 px-2 py-0.5 rounded"></span>
+                </div>
+
+                <!-- Availability & category -->
+                <div class="flex items-center gap-6 text-xs text-gray-600 mb-4">
+                    <div>
+                        <span class="font-semibold">Availability: </span>
+                        <span id="modal-stock"></span>
+                    </div>
+                    <div>
+                        <span class="font-semibold">Category: </span>
+                        <span id="modal-category"></span>
+                    </div>
+                </div>
+
+                <!-- Description -->
+                <p id="modal-description" class="text-sm text-gray-600 mb-6 flex-1"></p>
+
+                <!-- Quantity + buttons -->
+                <div class="flex items-center gap-4 mb-4">
+                    <div class="flex items-center border rounded">
+                        <button id="qty-minus" class="w-8 h-8 flex items-center justify-center">-</button>
+                        <input id="modal-qty" type="text" value="1"
+                            class="w-10 text-center text-sm border-l border-r outline-none">
+                        <button id="qty-plus" class="w-8 h-8 flex items-center justify-center">+</button>
+                    </div>
+
+                    <button id="modal-add-cart-btn" class="flex-1 bg-orange-500 text-white py-2.5 rounded hover:bg-orange-600 
+                         flex items-center justify-center gap-2 text-sm font-medium">
+                        <i class="fas fa-shopping-cart"></i> ADD TO CART
+                    </button>
+
+                    <button class="flex-1 border text-sm font-medium py-2.5 rounded hover:bg-gray-50">
+                        BUY NOW
+                    </button>
+                </div>
+
+                <!-- Wishlist / Compare -->
+                <div class="flex items-center gap-4 text-xs text-gray-600">
+                    <button class="flex items-center gap-1 hover:text-orange-500">
+                        <i class="far fa-heart"></i> Add to Wishlist
+                    </button>
+                    <button class="flex items-center gap-1 hover:text-orange-500">
+                        <i class="fas fa-random"></i> Add to Compare
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
 
 <body>
     <nav class="bg-[#191C1F]">
@@ -121,11 +252,11 @@
                 <img class="absolute left-145 top-3.5 cursor-pointer" src="image/MagnifyingGlass.png">
             </div>
             <div class="flex items-center gap-6">
-            <div class="relative">
-                <img id="shop" class="cursor-pointer hover:translate-y-2 duration-300" src="image/cart.png">
-                <span id="cart-count"
-                    class="absolute -top-2 -right-2 bg-white text-[#1B6392] text-xs px-1.5 py-0.5 rounded-full">0</span>
-            </div>
+                <div class="relative">
+                    <img id="shop" class="cursor-pointer hover:translate-y-2 duration-300" src="image/cart.png">
+                    <span id="cart-count"
+                        class="absolute -top-2 -right-2 bg-white text-[#1B6392] text-xs px-1.5 py-0.5 rounded-full">0</span>
+                </div>
 
                 <img id="heart" class="cursor-pointer sm:block hidden hover:translate-y-2 duration-300"
                     src="image/Heart.png">
@@ -290,11 +421,97 @@
                     Browse All Product <i class="fas fa-arrow-right"></i>
                 </a>
             </div>
-        
+
             <div class="grid grid-cols-5 border-l border-t border-gray-200" id="product-grid">
-                
+
             </div>
         </div>
+    </section>
+
+
+    <section class="w-full bg-white py-10 container mx-auto">
+    
+        <h1 class="text-center text-3xl font-bold mb-10">Shop with Categorys</h1>
+    
+        <div class="relative w-full overflow-hidden">
+    
+            <button id="prevBtn"
+                class="absolute left-4 top-1/2 -translate-y-1/2 bg-orange-500 text-white w-12 h-12 flex items-center justify-center rounded-full z-20 shadow">
+                ←
+            </button>
+    
+            <button id="nextBtn"
+                class="absolute right-4 top-1/2 -translate-y-1/2 bg-orange-500 text-white w-12 h-12 flex items-center justify-center rounded-full z-20 shadow">
+                →
+            </button>
+    
+            <div id="slider" class="scroll-track flex gap-6 pb-4">
+    
+                <div class="w-64 h-64 bg-white shadow rounded-xl flex flex-col items-center justify-center">
+                    <img src="./image/laptop.png" class="h-28 object-contain mb-3">
+                    <p class="font-semibold text-lg">Computer & Laptop</p>
+                </div>
+    
+                <div class="w-64 h-64 bg-white shadow rounded-xl flex flex-col items-center justify-center">
+                    <img src="/image/phone.png" class="h-28 object-contain mb-3">
+                    <p class="font-semibold text-lg">SmartPhone</p>
+                </div>
+    
+                <div class="w-64 h-64 bg-white shadow rounded-xl flex flex-col items-center justify-center">
+                    <img src="/image/headphone.png" class="h-28 object-contain mb-3">
+                    <p class="font-semibold text-lg">Headphones</p>
+                </div>
+    
+                <div class="w-64 h-64 bg-white shadow rounded-xl flex flex-col items-center justify-center">
+                    <img src="/image/keyboard.png" class="h-28 object-contain mb-3">
+                    <p class="font-semibold text-lg">Accessories</p>
+                </div>
+    
+                <div class="w-64 h-64 bg-white shadow rounded-xl flex flex-col items-center justify-center">
+                    <img src="/image/camera.png" class="h-28 object-contain mb-3">
+                    <p class="font-semibold text-lg">Camera & Photo</p>
+                </div>
+    
+                <div class="w-64 h-64 bg-white shadow rounded-xl flex flex-col items-center justify-center">
+                    <img src="/image/tv.png" class="h-28 object-contain mb-3">
+                    <p class="font-semibold text-lg">TV & Homes</p>
+                </div>
+    
+                <!-- DUPLICATE FOR INFINITE EFFECT -->
+                <div class="w-64 h-64 bg-white shadow rounded-xl flex flex-col items-center justify-center">
+                    <img src="/image/laptop.png" class="h-28 object-contain mb-3">
+                    <p class="font-semibold text-lg">Computer & Laptop</p>
+                </div>
+    
+                <div class="w-64 h-64 bg-white shadow rounded-xl flex flex-col items-center justify-center">
+                    <img src="/image/phone.png" class="h-28 object-contain mb-3">
+                    <p class="font-semibold text-lg">SmartPhone</p>
+                </div>
+
+                <div class="w-64 h-64 bg-white shadow rounded-xl flex flex-col items-center justify-center">
+                    <img src="/image/headphone.png" class="h-28 object-contain mb-3">
+                    <p class="font-semibold text-lg">Headphones</p>
+                </div>
+                
+                <div class="w-64 h-64 bg-white shadow rounded-xl flex flex-col items-center justify-center">
+                    <img src="/image/keyboard.png" class="h-28 object-contain mb-3">
+                    <p class="font-semibold text-lg">Accessories</p>
+                </div>
+                
+                <div class="w-64 h-64 bg-white shadow rounded-xl flex flex-col items-center justify-center">
+                    <img src="/image/camera.png" class="h-28 object-contain mb-3">
+                    <p class="font-semibold text-lg">Camera & Photo</p>
+                </div>
+                
+                <div class="w-64 h-64 bg-white shadow rounded-xl flex flex-col items-center justify-center">
+                    <img src="/image/tv.png" class="h-28 object-contain mb-3">
+                    <p class="font-semibold text-lg">TV & Homes</p>
+                </div>
+    
+            </div>
+    
+        </div>
+    
     </section>
 
     <script src="./script.js"></script>
