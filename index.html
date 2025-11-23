@@ -41,11 +41,13 @@
         transition: all 0.3s ease;
     }
 
+    /* Hover bo‘lganda barcha ekranlarda */
     .product-card:hover .hover-icons {
         transform: translateY(-50%) translateX(0);
         opacity: 1;
     }
 
+    /* Icon button style */
     .hover-icon-btn {
         width: 40px;
         height: 40px;
@@ -64,6 +66,23 @@
         transform: scale(1.1);
     }
 
+    /* Mobile uchun vertikal chiqarish (ixtiyoriy) */
+    @media (max-width: 768px) {
+        .hover-icons {
+            flex-direction: row;
+            top: auto;
+            bottom: 10px;
+            right: 50%;
+            transform: translateX(50%) translateY(100px);
+        }
+
+        .product-card:hover .hover-icons {
+            transform: translateX(50%) translateY(0);
+            opacity: 1;
+        }
+    }
+
+
     .scroll-track {
         display: flex;
         width: max-content;
@@ -79,7 +98,6 @@
             transform: translateX(-50%);
         }
     }
-    
 </style>
 
 
@@ -483,7 +501,7 @@
             <div class="flex flex-col gap-4
                  sm:flex-row sm:items-center sm:justify-between
                  mb-8">
-    
+
                 <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-4">
                     <h1 class="text-2xl sm:text-3xl font-bold text-gray-900">
                         Best Deals
@@ -494,7 +512,7 @@
                         </div>
                     </div>
                 </div>
-    
+
                 <a href="#" class="text-blue-500 hover:text-blue-600
                    flex items-center gap-2
                    text-xs sm:text-sm font-medium
@@ -605,50 +623,51 @@
 
     <!-- Card2 -->
     <div class="px-4 sm:px-6 lg:px-8 mt-16 lg:mt-24">
-        <div class="container mx-auto flex gap-10">
-            <div class="w-[300px] bg-[#F3DE6D] rounded-md overflow-hidden">
+        <div class="container mx-auto flex flex-col lg:flex-row gap-10">
+
+            <!-- Promo Card -->
+            <div class="w-full lg:w-[300px] bg-[#F3DE6D] rounded-md overflow-hidden flex-shrink-0">
                 <div class="p-6">
                     <div class="text-xs font-semibold text-orange-600">COMPUTER &amp; ACCESSORIES</div>
-                    <h2 class="text-3xl font-bold mt-3">32% Discount</h2>
+                    <h2 class="text-2xl sm:text-3xl font-bold mt-3">32% Discount</h2>
                     <p class="text-sm text-gray-700 mt-3">For all electronics products</p>
-    
-                    <div class="mt-6 flex items-center gap-3">
+
+                    <div class="mt-6 flex flex-col sm:flex-row sm:items-center sm:gap-3 gap-2">
                         <div class="text-xs text-gray-700">Offers ends in:</div>
                         <div class="bg-white px-3 py-1 rounded text-xs font-semibold">ENDS OF CHRISTMAS</div>
                     </div>
-    
+
                     <button id="shopNow"
-                        class="mt-6 bg-orange-500 hover:bg-orange-600 text-white px-5 py-3 rounded font-semibold flex items-center gap-2">
+                        class="mt-6 bg-orange-500 hover:bg-orange-600 text-white px-5 py-3 rounded font-semibold flex items-center gap-2 w-full sm:w-auto justify-center">
                         SHOP NOW <i class="fas fa-arrow-right"></i>
                     </button>
                 </div>
-    
-                <div class="">
-                    <img src="./image/electronics.jpg" alt="promo" class="w-full object-cover h-full mt-3">
+
+                <div class="mt-3 h-48 sm:h-60 lg:h-72 overflow-hidden">
+                    <img src="./image/electronics.jpg" alt="promo" class="w-full h-full object-cover">
                 </div>
             </div>
-    
+
+            <!-- Featured Products -->
             <div class="flex-1">
-                <div class="flex items-center justify-between mb-6">
-                    <h3 class="text-2xl font-semibold text-black">Featured Products</h3>
-                    <div class="flex items-center gap-3">
-                        <div id="filters" class="flex gap-2"></div>
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-6 gap-4 sm:gap-0">
+                    <h3 class="text-xl sm:text-2xl font-semibold text-black">Featured Products</h3>
+                    <div class="flex items-center gap-3 flex-wrap">
+                        <div id="filters" class="flex gap-2 flex-wrap"></div>
                         <button id="browseAll"
-                            class="border border-orange-400 text-orange-400 px-3 py-1 rounded text-sm">Browse All Product
+                            class="border border-orange-400 text-orange-400 px-3 py-1 rounded text-sm">Browse All
+                            Product
                             →</button>
                     </div>
                 </div>
-    
-                <div id="products-grid" class="grid
-                             grid-cols-1
-                             sm:grid-cols-2
-                             md:grid-cols-3
-                             lg:grid-cols-4
-                             gap-4">
+
+                <div id="products-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                    <!-- Products inserted by JS -->
                 </div>
             </div>
         </div>
     </div>
+
 
     <script src="./script.js"></script>
 </body>
