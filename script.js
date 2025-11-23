@@ -1,3 +1,45 @@
+const btn = document.getElementById("categoryBtn");
+const menu = document.getElementById("dropdownMenu");
+
+btn.addEventListener("click", () => {
+  menu.classList.toggle("hidden");
+});
+
+// tashqariga bosilganda yopiladi
+document.addEventListener("click", (e) => {
+  if (!btn.contains(e.target) && !menu.contains(e.target)) {
+    menu.classList.add("hidden");
+  }
+});
+
+
+const slides = document.getElementById("slides");
+const dots = document.querySelectorAll(".dot");
+
+let index = 0;
+const total = 3;
+
+function goToSlide(i) {
+  index = i;
+  slides.style.transform = `translateX(-${800 * index}px)`;
+
+  dots.forEach(d => d.classList.remove("bg-[#FA8232]"));
+  dots[index].classList.add("bg-[#FA8232]");
+}
+
+dots.forEach(dot => {
+  dot.addEventListener("click", () => {
+    goToSlide(dot.dataset.slide);
+  });
+});
+
+setInterval(() => {
+  index = (index + 1) % total;
+  goToSlide(index);
+}, 3000);
+
+goToSlide(0);
+
 const endTime = new Date().getTime()
   + (16 * 24 * 60 * 60 * 1000)
   + (21 * 60 * 60 * 1000)
@@ -44,62 +86,89 @@ async function loadProducts() {
     // ==== KATTA CARD ====
     if (index === 0) {
       container.innerHTML += `
-        <div class="product-card bg-white p-5 relative row-span-2 border-r border-b border-gray-200 h-148">
+    <div
+      class="product-card bg-white p-5 relative
+             border-r border-b border-gray-200
+             h-auto
+             lg:row-span-2 lg:col-span-2
+             flex flex-col
+             overflow-hidden group">
 
-          <div class="absolute top-3 left-3 flex flex-col gap-1 z-10">
-              <span class="bg-yellow-400 text-xs font-bold px-2 py-0.5 rounded">32% OFF</span>
-              <span class="bg-red-500 text-white text-xs font-bold px-2 py-0.5 rounded">HOT</span>
+        <!-- Badge'lar -->
+        <div class="absolute top-3 left-3 flex flex-col gap-1 z-10">
+          <span class="bg-yellow-400 text-xs font-bold px-2 py-0.5 rounded">32% OFF</span>
+          <span class="bg-red-500 text-white text-xs font-bold px-2 py-0.5 rounded">HOT</span>
+        </div>
+
+        <!-- Tepasi: rasm + rating -->
+        <div class="flex-1 flex flex-col items-center justify-center mb-4">
+          <img
+            src="${product.thumbnail}"
+            class="w-full max-w-xs md:max-w-sm lg:max-w-md
+                   h-52 md:h-64 lg:h-72
+                   object-contain mb-3
+                   transition-transform duration-200 group-hover:scale-105">
+
+          <div class="flex items-center text-yellow-400 text-xs">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i>
+            <i class="fas fa-star"></i><i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <span class="text-gray-500 ml-1.5">(${product.stock})</span>
+          </div>
+        </div>
+
+        <!-- Pastki qismi: matn va tugmalar -->
+        <div class="mt-auto">
+          <h3 class="text-base md:text-lg text-gray-800 mb-3 leading-snug">
+            ${product.title}
+          </h3>
+
+          <div class="flex items-center gap-2 mb-3">
+            <span class="text-gray-400 line-through text-sm">$${product.price + 100}</span>
+            <span class="text-blue-600 font-bold text-xl">$${product.price}</span>
           </div>
 
-          <img src="${product.thumbnail}" class="w-full h-68 object-contain mb-4">
-
-          <div class="flex text-yellow-400 text-xs mb-2">
-              <i class="fas fa-star"></i><i class="fas fa-star"></i>
-              <i class="fas fa-star"></i><i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <span class="text-gray-500 ml-1.5">(${product.stock})</span>
-          </div>
-
-          <h3 class="text-sm text-gray-800 mb-4 leading-tight">${product.title}</h3>
-
-          <div class="flex items-center gap-2 mb-4">
-              <span class="text-gray-400 line-through text-sm">$${product.price + 100}</span>
-              <span class="text-blue-600 font-bold text-xl">$${product.price}</span>
-          </div>
-
-          <p class="text-sm text-gray-500 mb-6 leading-relaxed">
-              ${product.description}
+          <p class="text-sm text-gray-500 mb-4 leading-relaxed line-clamp-3 md:line-clamp-none">
+            ${product.description}
           </p>
 
           <div class="flex gap-2">
-              <button class="w-10 h-10 bg-[#FFE7D6] rounded flex items-center justify-center">
-                  <i class="far fa-heart text-gray-900"></i>
-              </button>
+            <button
+              class="w-10 h-10 bg-[#FFE7D6] rounded flex items-center justify-center">
+              <i class="far fa-heart text-gray-900"></i>
+            </button>
 
-              <button onclick="handleAddToCart(${product.id})"
-                  class="flex-1 bg-orange-500 text-white py-2.5 rounded hover:bg-orange-600 
-                         flex items-center justify-center gap-2 text-sm font-medium">
-                  <i class="fas fa-shopping-cart"></i> ADD TO CART
-              </button>
+            <button
+              onclick="handleAddToCart(${product.id})"
+              class="flex-1 bg-orange-500 text-white py-2.5 rounded hover:bg-orange-600
+                     flex items-center justify-center gap-2 text-sm font-medium">
+              <i class="fas fa-shopping-cart"></i> ADD TO CART
+            </button>
 
-              <button class="w-10 h-10 bg-[#FFE7D6] rounded flex items-center justify-center"
-                      onclick="handleOpenModal(${product.id})">
-                  <i class="far fa-eye text-gray-900"></i>
-              </button>
+            <button
+              class="w-10 h-10 bg-[#FFE7D6] rounded flex items-center justify-center"
+              onclick="handleOpenModal(${product.id})">
+              <i class="far fa-eye text-gray-900"></i>
+            </button>
           </div>
-        </div>`;
+        </div>
+    </div>`;
     }
+
 
     // ==== KICHIK CARDLAR ====
     else {
       container.innerHTML += `
-        <div class="product-card bg-white p-5 relative border-r border-b border-gray-200 h-74">
+        <div class="product-card bg-white p-5 relative 
+                    border-r border-b border-gray-200 
+                    h-auto lg:h-74">
 
             <div class="absolute top-3 left-3 z-10">
                 <span class="bg-gray-500 text-white text-xs font-bold px-2 py-0.5 rounded">SOLD OUT</span>
             </div>
 
-            <div class="hover-icons">
+            <!-- Only show on desktop -->
+            <div class="hover-icons hidden lg:flex">
                 <div class="hover-icon-btn" onclick="handleAddToCart(${product.id})">
                     <i class="fas fa-shopping-cart text-gray-700"></i>
                 </div>
@@ -122,6 +191,7 @@ async function loadProducts() {
     }
 
   });
+
 }
 
 loadProducts();
@@ -354,3 +424,66 @@ if (slider && prevBtn && nextBtn) {
     setTimeout(() => slider.style.animationPlayState = "running", 300);
   };
 }
+
+
+
+// ====== CARD 2
+
+async function loadProduct() {
+  const res = await fetch("https://dummyjson.com/products?limit=8");
+  productsData = (await res.json()).products;
+
+  renderCategories();
+  renderProducts(productsData);
+}
+
+function renderCategories() {
+  const filters = document.getElementById("filters");
+  filters.innerHTML = "";
+
+  const categories = ["All", ...new Set(productsData.map(p => p.category))];
+
+  categories.forEach(cat => {
+    const btn = document.createElement("button");
+    btn.textContent = cat;
+
+    // Tailwind classes + after pseudo-element
+    btn.className = `
+      relative px-3 py-3 text-[#5F6C72] text-sm font-medium
+      after:absolute after:left-0 after:-bottom-1 after:w-full after:h-[2px] after:bg-[#FA8232]
+      after:scale-x-0 after:origin-left after:transition-transform after:duration-300
+      hover:text-black hover:after:scale-x-100
+    `;
+
+    btn.onclick = () =>
+      cat === "All"
+        ? renderProducts(productsData)
+        : renderProducts(productsData.filter(p => p.category === cat));
+
+    filters.appendChild(btn);
+  });
+}
+
+
+function renderProducts(products) {
+  const grid = document.getElementById("products-grid");
+  grid.innerHTML = "";
+
+  products.forEach(p => {
+    grid.innerHTML += `
+      <div class="product-card bg-white p-5 relative border border-gray-200 h-auto lg:h-74">
+        <span class="absolute top-3 left-3 bg-gray-500 text-white text-xs font-bold px-2 py-0.5 rounded">SOLD OUT</span>
+        <div class="hover-icons hidden lg:flex">
+          <div class="hover-icon-btn" onclick="handleAddToCart(${p.id})"><i class="fas fa-shopping-cart text-gray-700"></i></div>
+          <div class="hover-icon-btn"><i class="far fa-heart text-gray-700"></i></div>
+          <div class="hover-icon-btn" onclick="handleOpenModal(${p.id})"><i class="far fa-eye text-gray-700"></i></div>
+        </div>
+        <img src="${p.thumbnail}" class="w-full h-48 object-contain mb-0">
+        <h3 class="text-sm text-gray-800 mb-2">${p.title}</h3>
+        <span class="text-blue-600 font-bold text-lg">$${p.price}</span>
+      </div>`;
+  });
+}
+
+loadProduct();
+updateCartCount();
