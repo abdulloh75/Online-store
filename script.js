@@ -471,7 +471,7 @@ function renderProducts(products) {
 
   products.forEach(p => {
     grid.innerHTML += `
-      <div class="product-card bg-white p-5 relative border border-gray-200 h-auto lg:h-74">
+      <div class="product-card bg-white p-5 relative border border-gray-200 h-auto lg:h-74 xl:h-78">
         <span class="absolute top-3 left-3 bg-gray-500 text-white text-xs font-bold px-2 py-0.5 rounded">SOLD OUT</span>
         <div class="hover-icons hidden lg:flex">
           <div class="hover-icon-btn" onclick="handleAddToCart(${p.id})"><i class="fas fa-shopping-cart text-gray-700"></i></div>
