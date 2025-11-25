@@ -455,7 +455,7 @@ function renderCategories() {
       hover:text-black hover:after:scale-x-100
     `;
 
-    btn.onclick = () =>
+    btn.addEventListener = () =>
       cat === "All"
         ? renderProducts(productsData)
         : renderProducts(productsData.filter(p => p.category === cat));
@@ -487,3 +487,91 @@ function renderProducts(products) {
 
 loadProduct();
 updateCartCount();
+
+
+
+
+// ====== CARD 3
+
+async function loadsProducts() {
+  const res = await fetch("https://dummyjson.com/products?limit=8");
+  productsData = (await res.json()).products;
+
+  renderCategory();
+  renderProductss(productsData);
+}
+
+function renderCategory() {
+  const filter = document.getElementById("filter");
+  filter.innerHTML = "";
+
+  const categories = ["All", ...new Set(productsData.map(p => p.category))];
+
+  categories.forEach(cat => {
+    const btn = document.createElement("button");
+    btn.textContent = cat;
+
+    // Tailwind classes + after pseudo-element
+    btn.className = `
+      relative px-3 py-3 text-[#5F6C72] text-sm font-medium
+      after:absolute after:left-0 after:-bottom-1 after:w-full after:h-[2px] after:bg-[#FA8232]
+      after:scale-x-0 after:origin-left after:transition-transform after:duration-300
+      hover:text-black hover:after:scale-x-100
+    `;
+
+    btn.addEventListener = () =>
+      cat === "All"
+        ? renderProductss(productsData)
+        : renderProductss(productsData.filter(p => p.category === cat));
+
+    filters.appendChild(btn);
+  });
+}
+
+
+function renderProductss(products) {
+  const grid = document.getElementById("products-grid-card");
+  grid.innerHTML = "";
+
+  products.forEach(p => {
+    grid.innerHTML += `
+      <div class="product-card bg-white p-5 relative border border-gray-200 h-auto lg:h-74 xl:h-78">
+        <span class="absolute top-3 left-3 bg-gray-500 text-white text-xs font-bold px-2 py-0.5 rounded">SOLD OUT</span>
+        <div class="hover-icons hidden lg:flex">
+          <div class="hover-icon-btn" onclick="handleAddToCart(${p.id})"><i class="fas fa-shopping-cart text-gray-700"></i></div>
+          <div class="hover-icon-btn"><i class="far fa-heart text-gray-700"></i></div>
+          <div class="hover-icon-btn" onclick="handleOpenModal(${p.id})"><i class="far fa-eye text-gray-700"></i></div>
+        </div>
+        <img src="${p.thumbnail}" class="w-full h-48 object-contain mb-0">
+        <h3 class="text-sm text-gray-800 mb-2">${p.title}</h3>
+        <span class="text-blue-600 font-bold text-lg">$${p.price}</span>
+      </div>`;
+  });
+}
+
+loadsProducts();
+updateCartCount();
+
+
+const BOT_TOKEN = "";
+const CHAT_ID = "";
+
+function sendTelegram() {
+  const text = document.getElementById("msg").value;
+
+  fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      chat_id: CHAT_ID,
+      text: text
+    })
+  })
+    .then(res => res.json())
+    .then(data => {
+      alert("Xabar yuborildi!");
+    })
+    .catch(err => {
+      alert("Xatolik: " + err);
+    });
+}
