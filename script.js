@@ -447,7 +447,6 @@ function renderCategories() {
     const btn = document.createElement("button");
     btn.textContent = cat;
 
-    // Tailwind classes + after pseudo-element
     btn.className = `
       relative px-3 py-3 text-[#5F6C72] text-sm font-medium
       after:absolute after:left-0 after:-bottom-1 after:w-full after:h-[2px] after:bg-[#FA8232]
@@ -455,14 +454,16 @@ function renderCategories() {
       hover:text-black hover:after:scale-x-100
     `;
 
-    btn.addEventListener = () =>
+    btn.addEventListener("click", () =>
       cat === "All"
         ? renderProducts(productsData)
-        : renderProducts(productsData.filter(p => p.category === cat));
+        : renderProducts(productsData.filter(p => p.category === cat))
+    );
 
     filters.appendChild(btn);
   });
 }
+
 
 
 function renderProducts(products) {
@@ -508,33 +509,34 @@ function renderCategory() {
   const categories = ["All", ...new Set(productsData.map(p => p.category))];
 
   categories.forEach(cat => {
-    const btn = document.createElement("button");
-    btn.textContent = cat;
+    const btns = document.createElement("button");
+    btns.textContent = cat;
 
-    // Tailwind classes + after pseudo-element
-    btn.className = `
+    btns.className = `
       relative px-3 py-3 text-[#5F6C72] text-sm font-medium
       after:absolute after:left-0 after:-bottom-1 after:w-full after:h-[2px] after:bg-[#FA8232]
       after:scale-x-0 after:origin-left after:transition-transform after:duration-300
       hover:text-black hover:after:scale-x-100
     `;
 
-    btn.addEventListener = () =>
+    btns.addEventListener("click", () =>
       cat === "All"
         ? renderProductss(productsData)
-        : renderProductss(productsData.filter(p => p.category === cat));
+        : renderProductss(productsData.filter(p => p.category === cat))
+    );
 
-    filters.appendChild(btn);
+    filter.appendChild(btns);
   });
 }
 
 
+
 function renderProductss(products) {
-  const grid = document.getElementById("products-grid-card");
-  grid.innerHTML = "";
+  const grides = document.getElementById("products-grid-card");
+  grides.innerHTML = "";
 
   products.forEach(p => {
-    grid.innerHTML += `
+    grides.innerHTML += `
       <div class="product-card bg-white p-5 relative border border-gray-200 h-auto lg:h-74 xl:h-78">
         <span class="absolute top-3 left-3 bg-gray-500 text-white text-xs font-bold px-2 py-0.5 rounded">SOLD OUT</span>
         <div class="hover-icons hidden lg:flex">
