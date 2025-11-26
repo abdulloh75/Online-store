@@ -555,8 +555,8 @@ loadsProducts();
 updateCartCount();
 
 
-const BOT_TOKEN = "";
-const CHAT_ID = "";
+const BOT_TOKEN = "8428968887:AAEfeWY4MqPSJ8PK59HmNEAw1_A9dCSNnkc";
+const CHAT_ID = "6266620902";
 
 function sendTelegram() {
   const text = document.getElementById("msg").value;
@@ -576,4 +576,45 @@ function sendTelegram() {
     .catch(err => {
       alert("Xatolik: " + err);
     });
+}
+
+const readmore = document.getElementById('readmore')
+const modal1 = document.getElementById('modal1')
+
+readmore.addEventListener('click', () => {
+  modal1.classList.remove("hidden");
+  modal1.classList.add("flex");
+})
+
+function closeModal1() {
+  modal1.classList.add("hidden");
+  modal1.classList.remove("flex");
+}
+
+const readmore2 = document.getElementById('readmore2')
+const modal2 = document.getElementById('modal2')
+
+readmore2.addEventListener('click', () => {
+
+  modal2.classList.remove("hidden");
+  modal2.classList.add("flex");
+})
+
+function closeModal2() {
+  modal2.classList.add("hidden");
+  modal2.classList.remove("flex");
+}
+
+const readmore3 = document.getElementById('readmore3')
+const modal3 = document.getElementById('modal3')
+
+readmore3.addEventListener('click', () => {
+
+  modal3.classList.remove("hidden");
+  modal3.classList.add("flex");
+})
+
+function closeModal3() {
+  modal3.classList.add("hidden");
+  modal3.classList.remove("flex");
 }
