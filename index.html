@@ -384,258 +384,267 @@
 
 
 <body>
-<nav class="bg-[#191C1F]">
-    <div class="container mx-auto flex justify-between items-center h-[80px] px-5">
-        <div class="flex items-center gap-2">
-            <div class="bg-[#E9D97C] px-5 py-2 inline-block -rotate-3">
-                <span class="font-semibold text-xl">Black</span>
+    <nav class="bg-[#191C1F]">
+        <div class="container mx-auto flex justify-between items-center h-[80px] px-5">
+            <div class="flex items-center gap-2">
+                <div class="bg-[#E9D97C] px-5 py-2 inline-block -rotate-3">
+                    <span class="font-semibold text-xl">Black</span>
+                </div>
+                <p class="text-white text-lg">Friday</p>
             </div>
-            <p class="text-white text-lg">Friday</p>
+            <div class="flex items-center gap-2">
+                <p class="text-white text-sm">Up to</p>
+                <p class="text-[#EBC80C] text-2xl sm:text-4xl font-semibold">59%</p>
+                <p class="text-white text-lg sm:text-xl font-semibold">OFF</p>
+            </div>
+            <div
+                class="md:flex hidden items-center rounded-xs gap-2 bg-[#EBC80C] font-bold text-sm px-2 py-2 justify-center hover:bg-yellow-600 cursor-pointer">
+                <p>SHOP NOW</p>
+                <img src="image/ArrowRight.png">
+            </div>
         </div>
-        <div class="flex items-center gap-2">
-            <p class="text-white text-sm">Up to</p>
-            <p class="text-[#EBC80C] text-2xl sm:text-4xl font-semibold">59%</p>
-            <p class="text-white text-lg sm:text-xl font-semibold">OFF</p>
-        </div>
+    </nav>
+
+    <!--------------NAV-BAR-2-------------->
+    <nav class="bg-[#1B6392]">
         <div
-            class="md:flex hidden items-center rounded-xs gap-2 bg-[#EBC80C] font-bold text-sm px-2 py-2 justify-center hover:bg-yellow-600 cursor-pointer">
-            <p>SHOP NOW</p>
-            <img src="image/ArrowRight.png">
-        </div>
-    </div>
-</nav>
-
-<!--------------NAV-BAR-2-------------->
-<nav class="bg-[#1B6392]">
-    <div
-        class="container mx-auto px-5 text-white flex justify-between h-[52px] items-center border-b-1 border-gray-400">
-        <div>
-            <p class="text-sm">Welcome to Clicon online eCommerce store. </p>
-        </div>
-        <div class="md:flex hidden gap-5">
-            <div class="flex items-center gap-2 border-r-1 pr-5">
-                <p>Follow us:</p>
-                <img class="cursor-pointer" src="image/Twitter.png">
-                <img class="cursor-pointer" src="image/Facebook.png">
-                <img class="cursor-pointer" src="image/Pinterest.png">
-                <img class="cursor-pointer" src="image/Reddit.png">
-                <img class="cursor-pointer" src="image/Youtube.png">
-                <img class="cursor-pointer" src="image/Instagram.png">
+            class="container mx-auto px-5 text-white flex justify-between h-[52px] items-center border-b-1 border-gray-400">
+            <div>
+                <p class="text-sm">Welcome to Clicon online eCommerce store. </p>
             </div>
-            <div class="flex gap-5">
-                <div class="flex items-center gap-2 cursor-pointer">
-                    <p>ENG</p>
-                    <img src="image/CaretDown.png">
+            <div class="md:flex hidden gap-5">
+                <div class="flex items-center gap-2 border-r-1 pr-5">
+                    <p>Follow us:</p>
+                    <img class="cursor-pointer" src="image/Twitter.png">
+                    <img class="cursor-pointer" src="image/Facebook.png">
+                    <img class="cursor-pointer" src="image/Pinterest.png">
+                    <img class="cursor-pointer" src="image/Reddit.png">
+                    <img class="cursor-pointer" src="image/Youtube.png">
+                    <img class="cursor-pointer" src="image/Instagram.png">
                 </div>
-                <div class="flex items-center gap-2 cursor-pointer">
-                    <p>USD</p>
-                    <img src="image/CaretDown.png">
+                <div class="flex gap-5">
+                    <div class="flex items-center gap-2 cursor-pointer">
+                        <p>ENG</p>
+                        <img src="image/CaretDown.png">
+                    </div>
+                    <div class="flex items-center gap-2 cursor-pointer">
+                        <p>USD</p>
+                        <img src="image/CaretDown.png">
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="container mx-auto px-5 h-[88px] flex items-center justify-between">
-        <div class="flex items-center gap-2">
-            <img src="image/Icon.png">
-            <p class="text-xl sm:text-3xl font-bold text-white">CLICON</p>
-        </div>
-        <div class="lg:flex hidden relative">
-            <input class="w-[615px] h-[48px] bg-white outline-hidden px-5" type="text"
-                placeholder="Search for anything...">
-            <img class="absolute left-145 top-3.5 cursor-pointer" src="image/MagnifyingGlass.png">
-        </div>
-        <div class="flex items-center gap-6">
-            <div class="relative">
-                <img id="shop" class="cursor-pointer hover:translate-y-2 duration-300" src="image/cart.png">
-                <span id="cart-count"
-                    class="absolute -top-2 -right-2 bg-white text-[#1B6392] text-xs px-1.5 py-0.5 rounded-full">0</span>
+        <div class="container mx-auto px-5 h-[88px] flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <img src="image/Icon.png">
+                <p class="text-xl sm:text-3xl font-bold text-white">CLICON</p>
             </div>
-
-            <img id="heart" class="cursor-pointer sm:block hidden hover:translate-y-2 duration-300"
-                src="image/Heart.png">
-            <img id="user" class="cursor-pointer sm:block hidden hover:translate-y-2 duration-300" src="image/User.png">
-        </div>
-    </div>
-</nav>
-
-<!-------------HEADER--------------->
-<header>
-    <div
-        class="container mx-auto flex lg:flex-row flex-col lg:items-center justify-between px-5 py-3 border-b-1 border-gray-400">
-        <div class="flex sm:items-center gap-1 justify-between">
-
-            <div class="relative">
-                <div id="categoryBtn"
-                    class="flex items-center gap-2 hover:bg-gray-200 py-3 px-2 cursor-pointer text-gray-400 hover:text-black select-none">
-                    <p>All Category</p>
-                    <img src="image/CaretDown copy.png" class="w-4">
+            <div class="lg:flex hidden relative">
+                <input class="w-[615px] h-[48px] bg-white outline-hidden px-5" type="text"
+                    placeholder="Search for anything...">
+                <img class="absolute left-145 top-3.5 cursor-pointer" src="image/MagnifyingGlass.png">
+            </div>
+            <div class="flex items-center gap-6">
+                <div class="relative">
+                    <img id="shop" class="cursor-pointer hover:translate-y-2 duration-300" src="image/cart.png">
+                    <span id="cart-count"
+                        class="absolute -top-2 -right-2 bg-white text-[#1B6392] text-xs px-1.5 py-0.5 rounded-full">0</span>
                 </div>
 
-                <div id="dropdownMenu"
-                    class="absolute left-0 mt-1 w-40 bg-white shadow-lg border rounded-lg hidden z-10">
-                    <ul class="flex flex-col">
-                        <li class="px-4 py-2 cursor-pointer">Computer</li>
-                        <li class="px-4 py-2 cursor-pointer">Phone</li>
-                        <li class="px-4 py-2 cursor-pointer">Headphone</li>
-                        <li class="px-4 py-2 cursor-pointer">Keyboard</li>
-                        <li class="px-4 py-2 cursor-pointer">Camera</li>
-                        <li class="px-4 py-2 cursor-pointer">TV</li>
-                    </ul>
+                <img id="heart" class="cursor-pointer sm:block hidden hover:translate-y-2 duration-300"
+                    src="image/Heart.png">
+                <img id="user" class="cursor-pointer sm:block hidden hover:translate-y-2 duration-300"
+                    src="image/User.png">
+            </div>
+        </div>
+    </nav>
+
+    <!-------------HEADER--------------->
+    <header>
+        <div
+            class="container mx-auto flex lg:flex-row flex-col lg:items-center justify-between px-5 py-3 border-b-1 border-gray-400">
+            <div class="flex sm:items-center gap-1 justify-between">
+
+                <div class="relative">
+                    <div id="categoryBtn"
+                        class="flex items-center gap-2 hover:bg-gray-200 py-3 px-2 cursor-pointer text-gray-400 hover:text-black select-none">
+                        <p>All Category</p>
+                        <img src="image/CaretDown copy.png" class="w-4">
+                    </div>
+
+                    <div id="dropdownMenu"
+                        class="absolute left-0 mt-1 w-40 bg-white shadow-lg border rounded-lg hidden z-10">
+                        <ul class="flex flex-col">
+                            <li class="px-4 py-2 cursor-pointer">Computer</li>
+                            <li class="px-4 py-2 cursor-pointer">Phone</li>
+                            <li class="px-4 py-2 cursor-pointer">Headphone</li>
+                            <li class="px-4 py-2 cursor-pointer">Keyboard</li>
+                            <li class="px-4 py-2 cursor-pointer">Camera</li>
+                            <li class="px-4 py-2 cursor-pointer">TV</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div
+                    class="flex items-center gap-2 hover:bg-gray-200 py-3 px-2 cursor-pointer text-gray-400 hover:text-black">
+                    <img src="image/MapPinLine.png">
+                    <p>Track Order</p>
+                </div>
+
+                <div
+                    class="sm:flex hidden items-center gap-2 hover:bg-gray-200 py-3 px-2 cursor-pointer text-gray-400 hover:text-black">
+                    <img src="image/aylanma.png">
+                    <p>Compare</p>
+                </div>
+                <div
+                    class="md:flex hidden items-center gap-2 hover:bg-gray-200 py-3 px-2 cursor-pointer text-gray-400 hover:text-black">
+                    <img src="image/Headphones.png">
+                    <p>Customer Support</p>
+                </div>
+                <div
+                    class="md:flex hidden items-center gap-2 hover:bg-gray-200 py-3 px-2 cursor-pointer text-gray-400 hover:text-black">
+                    <img src="image/Info.png">
+                    <p>Need Help</p>
                 </div>
             </div>
 
-            <div
-                class="flex items-center gap-2 hover:bg-gray-200 py-3 px-2 cursor-pointer text-gray-400 hover:text-black">
-                <img src="image/MapPinLine.png">
-                <p>Track Order</p>
-            </div>
-
-            <div
-                class="sm:flex hidden items-center gap-2 hover:bg-gray-200 py-3 px-2 cursor-pointer text-gray-400 hover:text-black">
-                <img src="image/aylanma.png">
-                <p>Compare</p>
-            </div>
-            <div
-                class="md:flex hidden items-center gap-2 hover:bg-gray-200 py-3 px-2 cursor-pointer text-gray-400 hover:text-black">
-                <img src="image/Headphones.png">
-                <p>Customer Support</p>
-            </div>
-            <div
-                class="md:flex hidden items-center gap-2 hover:bg-gray-200 py-3 px-2 cursor-pointer text-gray-400 hover:text-black">
-                <img src="image/Info.png">
-                <p>Need Help</p>
+            <div class="lg:flex hidden gap-2 items-center">
+                <img src="image/PhoneCall.png">
+                <p>+998 94-892-00-01</p>
             </div>
         </div>
 
-        <div class="lg:flex hidden gap-2 items-center">
-            <img src="image/PhoneCall.png">
-            <p>+998 94-892-00-01</p>
-        </div>
-    </div>
+        <!-----------------HEADER-ADVERTISEMENT--------------------->
+        <div class="w-full mx-auto container px-5 flex flex-col xl:flex-row justify-between gap-5 py-7">
 
-    <!-----------------HEADER-ADVERTISEMENT--------------------->
-    <div class="w-full mx-auto container px-5 flex flex-col xl:flex-row justify-between gap-5 py-7">
+            <!-- LEFT BIG CAROUSEL -->
+            <div class="relative w-full xl:w-[950px] h-[300px] sm:h-[380px] xl:h-[520px] lg:flex hidden overflow-hidden rounded-sm bg-[#F2F4F5]"
+                id="carousel">
 
-        <!-- LEFT BIG CAROUSEL -->
-        <div class="relative w-full xl:w-[950px] h-[300px] sm:h-[380px] xl:h-[520px] lg:flex hidden overflow-hidden rounded-sm bg-[#F2F4F5]"
-            id="carousel">
+                <div class="flex transition-transform duration-900" id="slides">
 
-            <div class="flex transition-transform duration-900" id="slides">
+                    <div class="min-w-full flex justify-between items-center px-5">
+                        <div class="pl-5 flex flex-col gap-5 relative">
+                            <div class="flex items-center gap-1">
+                                <img src="image/Devider.png">
+                                <p class="text-[#2484C2] text-sm font-semibold">THE BEST PLACE TO PLAY</p>
+                            </div>
+                            <p class="text-3xl sm:text-4xl xl:text-5xl font-semibold">Xbox Consoles</p>
+                            <p class="text-[#475156] text-sm sm:text-lg xl:text-xl max-w-[356px]">Save up to 50% on
+                                select Xbox games.</p>
 
-                <div class="min-w-full flex justify-between items-center px-5">
-                    <div class="pl-5 flex flex-col gap-5 relative">
-                        <div class="flex items-center gap-1">
-                            <img src="image/Devider.png">
-                            <p class="text-[#2484C2] text-sm font-semibold">THE BEST PLACE TO PLAY</p>
+                            <div
+                                class="bg-[#FA8232] flex text-white w-[150px] sm:w-[191px] items-center justify-center py-2 sm:py-3 cursor-pointer gap-2 rounded-xs hover:bg-orange-600">
+                                <p class="text-sm sm:text-base">SHOP NOW</p>
+                                <img class="sm:block hidden" src="image/ArrowRight copy.png">
+                            </div>
                         </div>
-                        <p class="text-3xl sm:text-4xl xl:text-5xl font-semibold">Xbox Consoles</p>
-                        <p class="text-[#475156] text-sm sm:text-lg xl:text-xl max-w-[356px]">Save up to 50% on
-                            select Xbox games.</p>
 
+                        <div class="flex relative">
+                            <img class="animate-[float_2s_ease-in-out_infinite] w-[180px] sm:w-[250px] xl:w-auto"
+                                src="image/playstation.png">
+                            <p class="absolute left-65 text-white bg-[#2DA5F3] py-7 px-5 rounded-full border-3">$299</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="absolute bottom-5 left-10 flex gap-3">
+                    <div class="w-3 h-3 bg-gray-300 rounded-full cursor-pointer dot" data-slide="0"></div>
+                    <div class="w-3 h-3 bg-gray-300 rounded-full cursor-pointer dot" data-slide="1"></div>
+                    <div class="w-3 h-3 bg-gray-300 rounded-full cursor-pointer dot" data-slide="2"></div>
+                </div>
+            </div>
+
+            <!-- RIGHT SIDE BOXES -->
+            <div class="flex flex-col gap-6 w-full xl:w-auto">
+
+                <!-- TOP BLACK BOX -->
+                <div class="bg-[#191C1F] w-full sm:h-[248px] h-[230px] flex justify-between rounded-xs px-5 sm:px-10">
+                    <div class="flex flex-col gap-3 justify-center">
+                        <p class="text-xs sm:text-sm text-[#EBC80C]">SUMMER SALES</p>
+                        <p
+                            class="text-lg sm:text-2xl xl:text-4xl font-semibold text-white max-w-[200px] sm:max-w-[250px]">
+                            New Google Pixel 6 Pro</p>
                         <div
-                            class="bg-[#FA8232] flex text-white w-[150px] sm:w-[191px] items-center justify-center py-2 sm:py-3 cursor-pointer gap-2 rounded-xs hover:bg-orange-600">
-                            <p class="text-sm sm:text-base">SHOP NOW</p>
+                            class="bg-[#FA8232] flex text-white w-[90px] sm:w-[156px] items-center justify-center py-1 sm:py-3 cursor-pointer gap-2 rounded-xs hover:bg-orange-600">
+                            <p class="text-xs sm:text-sm">SHOP NOW</p>
                             <img class="sm:block hidden" src="image/ArrowRight copy.png">
                         </div>
                     </div>
-
-                    <div class="flex relative">
-                        <img class="animate-[float_2s_ease-in-out_infinite] w-[180px] sm:w-[250px] xl:w-auto"
-                            src="image/playstation.png">
-                        <p class="absolute left-65 text-white bg-[#2DA5F3] py-7 px-5 rounded-full border-3">$299</p>
+                    <div class="flex items-end relative">
+                        <img class="animate-[float_2s_ease-in-out_infinite] w-[120px] sm:w-auto"
+                            src="image/google-phone.png">
+                        <p
+                            class="sm:absolute hidden text-lg font-semibold flex items-center justify-center py-2 px-2 bottom-10 left-5 bg-[#EFD33D]">
+                            29% OFF</p>
                     </div>
                 </div>
-            </div>
 
-            <div class="absolute bottom-5 left-10 flex gap-3">
-                <div class="w-3 h-3 bg-gray-300 rounded-full cursor-pointer dot" data-slide="0"></div>
-                <div class="w-3 h-3 bg-gray-300 rounded-full cursor-pointer dot" data-slide="1"></div>
-                <div class="w-3 h-3 bg-gray-300 rounded-full cursor-pointer dot" data-slide="2"></div>
+                <!-- BOTTOM GRAY BOX -->
+                <div
+                    class="bg-[#F2F4F5] w-full sm:h-[248px] h-[230px] flex items-center justify-between px-5 sm:px-10 rounded-xs">
+                    <div>
+                        <img class="animate-[float_2s_ease-in-out_infinite] w-[120px] sm:w-auto"
+                            src="image/airpods.png">
+                    </div>
+                    <div class="flex flex-col gap-2 text-right sm:text-left">
+                        <p class="text-lg sm:text-2xl xl:text-4xl font-semibold max-w-[200px]">Xiaomi FlipBuds Pro</p>
+                        <p class="text-[#2DA5F3] text-base sm:text-lg font-semibold">$299 USD</p>
+                        <div
+                            class="bg-[#FA8232] flex text-white w-[90px] sm:w-[156px] items-center justify-center py-1 sm:py-3 cursor-pointer gap-2 rounded-xs hover:bg-orange-600">
+                            <p class="text-xs sm:text-sm">SHOP NOW</p>
+                            <img class="sm:block hidden" src="image/ArrowRight copy.png">
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
-        <!-- RIGHT SIDE BOXES -->
-        <div class="flex flex-col gap-6 w-full xl:w-auto">
+    </header>
 
-            <!-- TOP BLACK BOX -->
-            <div class="bg-[#191C1F] w-full sm:h-[248px] h-[230px] flex justify-between rounded-xs px-5 sm:px-10">
-                <div class="flex flex-col gap-3 justify-center">
-                    <p class="text-xs sm:text-sm text-[#EBC80C]">SUMMER SALES</p>
-                    <p class="text-lg sm:text-2xl xl:text-4xl font-semibold text-white max-w-[200px] sm:max-w-[250px]">
-                        New Google Pixel 6 Pro</p>
-                    <div
-                        class="bg-[#FA8232] flex text-white w-[90px] sm:w-[156px] items-center justify-center py-1 sm:py-3 cursor-pointer gap-2 rounded-xs hover:bg-orange-600">
-                        <p class="text-xs sm:text-sm">SHOP NOW</p>
-                        <img class="sm:block hidden" src="image/ArrowRight copy.png">
-                    </div>
-                </div>
-                <div class="flex items-end relative">
-                    <img class="animate-[float_2s_ease-in-out_infinite] w-[120px] sm:w-auto"
-                        src="image/google-phone.png">
-                    <p
-                        class="sm:absolute hidden text-lg font-semibold flex items-center justify-center py-2 px-2 bottom-10 left-5 bg-[#EFD33D]">
-                        29% OFF</p>
-                </div>
-            </div>
-
-            <!-- BOTTOM GRAY BOX -->
-            <div
-                class="bg-[#F2F4F5] w-full sm:h-[248px] h-[230px] flex items-center justify-between px-5 sm:px-10 rounded-xs">
+    <!------------SECTION------------>
+    <section class="container mx-auto py-8">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 px-6">
+    
+            <!-- ITEM 1 -->
+            <div class="flex flex-col items-center text-center lg:flex-row lg:text-left lg:items-start gap-4">
+                <img src="image/kub.png" class="w-12 h-12">
                 <div>
-                    <img class="animate-[float_2s_ease-in-out_infinite] w-[120px] sm:w-auto" src="image/airpods.png">
-                </div>
-                <div class="flex flex-col gap-2 text-right sm:text-left">
-                    <p class="text-lg sm:text-2xl xl:text-4xl font-semibold max-w-[200px]">Xiaomi FlipBuds Pro</p>
-                    <p class="text-[#2DA5F3] text-base sm:text-lg font-semibold">$299 USD</p>
-                    <div
-                        class="bg-[#FA8232] flex text-white w-[90px] sm:w-[156px] items-center justify-center py-1 sm:py-3 cursor-pointer gap-2 rounded-xs hover:bg-orange-600">
-                        <p class="text-xs sm:text-sm">SHOP NOW</p>
-                        <img class="sm:block hidden" src="image/ArrowRight copy.png">
-                    </div>
+                    <p class="text-lg font-semibold">Fasted Delivery</p>
+                    <p class="text-sm text-gray-500">Delivery in 24/H</p>
                 </div>
             </div>
+    
+            <!-- ITEM 2 -->
+            <div class="flex flex-col items-center text-center lg:flex-row lg:text-left lg:items-start gap-4">
+                <img src="image/kubik.png" class="w-12 h-12">
+                <div>
+                    <p class="text-lg font-semibold">24 Hours Return</p>
+                    <p class="text-sm text-gray-500">100% money-back guarantee</p>
+                </div>
+            </div>
+    
+            <!-- ITEM 3 -->
+            <div class="flex flex-col items-center text-center lg:flex-row lg:text-left lg:items-start gap-4">
+                <img src="image/CreditCard.png" class="w-12 h-12">
+                <div>
+                    <p class="text-lg font-semibold">Secure Payment</p>
+                    <p class="text-sm text-gray-500">Your money is safe</p>
+                </div>
+            </div>
+    
+            <!-- ITEM 4 -->
+            <div class="flex flex-col items-center text-center lg:flex-row lg:text-left lg:items-start gap-4">
+                <img src="image/Headphones copy.png" class="w-12 h-12">
+                <div>
+                    <p class="text-lg font-semibold">Support 24/7</p>
+                    <p class="text-sm text-gray-500">Live contact/message</p>
+                </div>
+            </div>
+    
         </div>
-    </div>
+    </section>
 
-</header>
-
-<!------------SECTION------------>
-<section class="container mx-auto">
-    <div
-        class="mx-5 flex justify-center gap-25 py-5 rounded-sm items-center xl:border-1 border-gray-300 px-5 xl:flex-row flex-col sm:hidden xl:flex">
-        <div class="flex gap-3 border-gray-400 w-auto h-[76px] items-center pl-10">
-            <img src="image/kub.png">
-            <div>
-                <p class="text-lg xl:text-2xl">Fasted Delivery</p>
-                <p class="text-sm text-[#5F6C72]">Delivery in 24/H</p>
-            </div>
-        </div>
-        <div class="flex gap-3 border-gray-400 w-auto h-[76px] items-center">
-            <img class="pr-10 xl:block hidden" src="image/Line 4.png">
-            <img src="image/kubik.png">
-            <div>
-                <p class="text-lg border xl:text-2xl">24 Hours Return</p>
-                <p class="text-sm text-[#5F6C72]">100% money-back guarantee</p>
-            </div>
-        </div>
-        <div class="flex gap-3 border-gray-400 w-[280px] h-[76px] items-center">
-            <img class="pr-10 xl:block hidden" src="image/Line 4.png">
-            <img src="image/CreditCard.png">
-            <div>
-                <p class="text-lg xl:text-2xl">Secure Payment</p>
-                <p class="text-sm text-[#5F6C72]">Your money is safe</p>
-            </div>
-        </div>
-        <div class="flex gap-3 border-gray-400 w-auto h-[76px] items-center">
-            <img class="pr-10 xl:block hidden" src="image/Line 4.png">
-            <img src="image/Headphones copy.png">
-            <div>
-                <p class="text-xl">Support 24/7</p>
-                <p class="text-sm text-[#5F6C72]">Live contact/message</p>
-            </div>
-        </div>
-    </div>
-</section>
 
 
     <!------------CARD------------->
