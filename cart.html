@@ -14,8 +14,8 @@
   <!-- TOP NAV -->
   <nav class="bg-[#1B6392] px-6 py-3 text-white">
     <div class="max-w-7xl mx-auto flex justify-between items-center">
-      <div class="text-2xl font-semibold">CLICON</div>
-      <div class="flex items-center gap-6">
+      <div class="text-2xl font-semibold"><a class="text-2xl font-semibold " href="./index.html">CLICON</a></div>
+      <div class="hidden sm:flex items-center gap-6">
         <a href="index.html" class="hover:underline">Home</a>
         <a class="border-b pb-1">My Cart</a>
         <a href="#" class="hover:underline">Profile</a>
@@ -27,15 +27,16 @@
   <div class="max-w-7xl mx-auto px-4 py-10">
 
     <!-- Breadcrumb -->
-    <p class="text-gray-500 mb-6">Home / <span class="text-black font-medium">Shopping Cart</span></p>
+    <p class="text-gray-500 mb-6 text-sm sm:text-base">Home / <span class="text-black font-medium">Shopping Cart</span>
+    </p>
 
     <div class="grid md:grid-cols-3 gap-6">
 
       <!-- CART TABLE -->
-      <div class="md:col-span-2 bg-white border rounded-lg">
+      <div class="md:col-span-2 bg-white border rounded-lg w-full">
 
         <!-- HEADER -->
-        <div class="grid grid-cols-4 py-4 px-6 border-b text-gray-600 font-semibold">
+        <div class="hidden sm:grid grid-cols-4 py-4 px-6 border-b text-gray-600 font-semibold">
           <p>PRODUCTS</p>
           <p class="text-center">PRICE</p>
           <p class="text-center">QUANTITY</p>
@@ -46,8 +47,9 @@
         <div id="cart-items"></div>
 
         <!-- ACTION BUTTONS -->
-        <div class="flex justify-between px-6 py-4 border-t">
-          <a href="index.html" class="px-4 py-2 border border-gray-300 rounded text-gray-700">← RETURN TO SHOP</a>
+        <div class="flex flex-col sm:flex-row justify-between gap-3 px-6 py-4 border-t">
+          <a href="index.html" class="px-4 py-2 border border-gray-300 rounded text-gray-700 text-center">← RETURN TO
+            SHOP</a>
           <button class="px-4 py-2 border bg-blue-600 text-white rounded">UPDATE CART</button>
         </div>
 
@@ -103,72 +105,72 @@
   <!-- JS -->
   <script>
     function loadCart() {
-        const cart = JSON.parse(localStorage.getItem("cart")) || [];
-        const container = document.getElementById("cart-items");
-        container.innerHTML = "";
+      const cart = JSON.parse(localStorage.getItem("cart")) || [];
+      const container = document.getElementById("cart-items");
+      container.innerHTML = "";
 
-        let subtotal = 0;
+      let subtotal = 0;
 
-        cart.forEach((item, i) => {
-          const qty = item.quantity || 1;  // ✅ quantity dan o‘qiyapmiz
-          subtotal += item.price * qty;
+      cart.forEach((item, i) => {
+        const qty = item.quantity || 1;
+        subtotal += item.price * qty;
 
-          container.innerHTML += `
-      <div class="grid grid-cols-4 px-6 py-4 items-center border-b">
+        container.innerHTML += `
+          <div class="grid grid-cols-1 sm:grid-cols-4 px-6 py-4 items-center border-b">
 
-        <div class="flex items-center gap-3">
-          <img src="${item.thumbnail}" class="w-20 h-20 object-contain">
-          <div>
-            <p class="font-semibold">${item.title}</p>
-            <p class="text-gray-500 text-sm">$${item.price}</p>
+            <div class="flex sm:flex-row flex-col items-center gap-3">
+              <img src="${item.thumbnail}" class="w-16 h-16 sm:w-20 sm:h-20 object-contain">
+              <div class="text-center sm:text-left">
+                <p class="font-semibold">${item.title}</p>
+                <p class="text-gray-500 text-sm">$${item.price}</p>
+              </div>
+            </div>
+
+            <p class="text-center sm:text-center font-medium">$${item.price}</p>
+
+            <div class="flex justify-center items-center gap-3 mt-3 sm:mt-0">
+              <button onclick="changeQty(${i}, -1)" class="w-8 h-8 border rounded">-</button>
+              <span class="font-semibold">${qty}</span>
+              <button onclick="changeQty(${i}, 1)" class="w-8 h-8 border rounded">+</button>
+            </div>
+
+            <div class="flex justify-center sm:justify-between items-center gap-3 mt-3 sm:mt-0">
+              <p class="font-semibold text-center sm:text-right w-full">$${item.price * qty}</p>
+              <button onclick="deleteItem(${i})" class="text-red-500 text-xl">
+                <i class="fa-solid fa-circle-xmark"></i>
+              </button>
+            </div>
+
           </div>
-        </div>
+        `;
+      });
 
-        <p class="text-center font-medium">$${item.price}</p>
+      document.getElementById("subtotal").innerText = "$" + subtotal;
+      document.getElementById("total").innerText = "$" + subtotal;
+    }
 
-        <div class="flex justify-center items-center gap-3">
-          <button onclick="changeQty(${i}, -1)" class="w-8 h-8 border rounded">-</button>
-          <span class="font-semibold">${qty}</span>
-          <button onclick="changeQty(${i}, 1)" class="w-8 h-8 border rounded">+</button>
-        </div>
+    function changeQty(index, amount) {
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
+      const item = cart[index];
 
-        <div class="flex justify-between items-center">
-          <p class="font-semibold text-right w-full">$${item.price * qty}</p>
-          <button onclick="deleteItem(${i})" class="text-red-500 text-xl ml-4">
-            <i class="fa-solid fa-circle-xmark"></i>
-          </button>
-        </div>
-      </div>
-    `;
-        });
+      if (!item) return;
 
-        document.getElementById("subtotal").innerText = "$" + subtotal;
-        document.getElementById("total").innerText = "$" + subtotal;
-      }
+      if (!item.quantity) item.quantity = 1;
+      item.quantity += amount;
+      if (item.quantity <= 0) item.quantity = 1;
 
-      function changeQty(index, amount) {
-        let cart = JSON.parse(localStorage.getItem("cart")) || [];
-        const item = cart[index];
-
-        if (!item) return;
-
-        if (!item.quantity) item.quantity = 1;
-        item.quantity += amount;
-        if (item.quantity <= 0) item.quantity = 1;
-
-        localStorage.setItem("cart", JSON.stringify(cart));
-        loadCart();
-      }
-
-      function deleteItem(index) {
-        let cart = JSON.parse(localStorage.getItem("cart")) || [];
-        cart.splice(index, 1);
-        localStorage.setItem("cart", JSON.stringify(cart));
-        loadCart();
-      }
-
+      localStorage.setItem("cart", JSON.stringify(cart));
       loadCart();
+    }
 
+    function deleteItem(index) {
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
+      cart.splice(index, 1);
+      localStorage.setItem("cart", JSON.stringify(cart));
+      loadCart();
+    }
+
+    loadCart();
   </script>
 
 </body>

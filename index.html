@@ -32,7 +32,7 @@
     .hover-icons {
         position: absolute;
         top: 50%;
-        right: 5rem;
+        right: 3.5rem;
         transform: translateY(-50%) translateX(100px);
         transition: transform 0.3s ease;
         display: flex;
@@ -59,9 +59,11 @@
         transition: all 0.2s ease;
     }
 
-    .hover-icon-btn:hover {
-        background: #f3f4f6;
-        transform: scale(1.1);
+    .hover-icon-btn:hover{
+        background: #FA8232;
+    }
+    .hover-icon-btn > i:hover {
+        color: #fff;
     }
 
     @media (max-width: 768px) {
@@ -80,14 +82,69 @@
     }
 }
 
+
+
+.hover-iconss {
+        position: absolute;
+        top: 50%;
+        right: 4.5rem;
+        transform: translateY(-50%) translateX(100px);
+        transition: transform 0.3s ease;
+        display: flex;
+        gap: 0.5rem;
+        opacity: 0;
+        transition: all 0.3s ease;
+    }
+
+    .product-card:hover .hover-iconss {
+        transform: translateY(-50%) translateX(0);
+        opacity: 1;
+    }
+
+    .hover-icon-btnn {
+        width: 40px;
+        height: 40px;
+        background: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+        cursor: pointer;
+        transition: all 0.2s ease;
+    }
+
+    .hover-icon-btnn:hover{
+        background: #FA8232;
+    }
+    .hover-icon-btnn > i:hover {
+        color: #fff;
+    }
+
+    @media (max-width: 768px) {
+    .hover-iconss {
+        flex-direction: row;
+        top: auto;
+        bottom: 10px;
+        left: 50%;
+        right: auto;
+        transform: translateX(-50%) translateY(100px);
+    }
+
+    .product-card:hover .hover-iconss {
+        transform: translateX(-50%) translateY(0);
+        opacity: 1;
+    }
+}
+
 @media (min-width: 769px) and (max-width: 1200px) {
-    .hover-icons {
+    .hover-iconss {
         right: 1rem;
     }
 }
 
 @media (min-width: 1201px) and (max-width: 1600px) {
-    .hover-icons {
+    .hover-iconss {
         right: 2rem;
     }
 }
@@ -506,13 +563,13 @@
 
 
     <!------------CARD------------->
-    <section class="px-4 sm:px-6 lg:px-8 mt-16 lg:mt-24">
+    <section class="px-5 sm:px-6 lg:px-8 mt-16 lg:mt-24">
         <div class="container mx-auto">
             <div class="flex flex-col gap-4
                  sm:flex-row sm:items-center sm:justify-between
                  mb-8">
 
-                <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-4">
+                <div class="flex flex-col items-center gap-3 sm:flex-row sm:items-center sm:gap-4">
                     <h1 class="text-2xl sm:text-3xl font-bold text-gray-900">
                         Best Deals
                     </h1>
@@ -546,11 +603,11 @@
 
 
     <!-----------Carousel---------->
-    <section class="w-full bg-white py-10 container mx-auto">
+    <section class="w-full bg-white py-10 container mx-auto px-5">
 
         <h1 class="text-center text-3xl font-bold mb-10">Shop with Categorys</h1>
 
-        <div class="relative w-full overflow-hidden">
+        <div class="relative w-full overflow-hidden mx-auto container">
 
             <button id="prevBtn"
                 class="absolute left-4 top-1/2 -translate-y-1/2 bg-orange-500 text-white w-12 h-12 flex items-center justify-center rounded-full z-20 shadow">
@@ -562,65 +619,65 @@
                 →
             </button>
 
-            <div id="slider" class="scroll-track flex gap-6 pb-4">
+            <div id="slider" class="scroll-track flex gap-6 py-4">
 
-                <div class="w-64 h-64 bg-white shadow rounded-xl flex flex-col items-center justify-center">
+                <div class="w-64 h-64 bg-white border border-gray-300 rounded-xl flex flex-col items-center justify-center">
                     <img src="./image/laptop.png" class="h-28 object-contain mb-3">
                     <p class="font-semibold text-lg">Computer & Laptop</p>
                 </div>
 
-                <div class="w-64 h-64 bg-white shadow rounded-xl flex flex-col items-center justify-center">
+                <div class="w-64 h-64 bg-white border border-gray-300 rounded-xl flex flex-col items-center justify-center">
                     <img src="/image/phone.png" class="h-28 object-contain mb-3">
                     <p class="font-semibold text-lg">SmartPhone</p>
                 </div>
 
-                <div class="w-64 h-64 bg-white shadow rounded-xl flex flex-col items-center justify-center">
+                <div class="w-64 h-64 bg-white border border-gray-300 rounded-xl flex flex-col items-center justify-center">
                     <img src="/image/headphone.png" class="h-28 object-contain mb-3">
                     <p class="font-semibold text-lg">Headphones</p>
                 </div>
 
-                <div class="w-64 h-64 bg-white shadow rounded-xl flex flex-col items-center justify-center">
+                <div class="w-64 h-64 bg-white border border-gray-300 rounded-xl flex flex-col items-center justify-center">
                     <img src="/image/keyboard.png" class="h-28 object-contain mb-3">
                     <p class="font-semibold text-lg">Accessories</p>
                 </div>
 
-                <div class="w-64 h-64 bg-white shadow rounded-xl flex flex-col items-center justify-center">
+                <div class="w-64 h-64 bg-white border border-gray-300 rounded-xl flex flex-col items-center justify-center">
                     <img src="/image/camera.png" class="h-28 object-contain mb-3">
                     <p class="font-semibold text-lg">Camera & Photo</p>
                 </div>
 
-                <div class="w-64 h-64 bg-white shadow rounded-xl flex flex-col items-center justify-center">
+                <div class="w-64 h-64 bg-white border border-gray-300 rounded-xl flex flex-col items-center justify-center">
                     <img src="/image/tv.png" class="h-28 object-contain mb-3">
                     <p class="font-semibold text-lg">TV & Homes</p>
                 </div>
 
                 <!-- DUPLICATE FOR INFINITE EFFECT -->
-                <div class="w-64 h-64 bg-white shadow rounded-xl flex flex-col items-center justify-center">
+                <div class="w-64 h-64 bg-white border border-gray-300 rounded-xl flex flex-col items-center justify-center">
                     <img src="/image/laptop.png" class="h-28 object-contain mb-3">
                     <p class="font-semibold text-lg">Computer & Laptop</p>
                 </div>
 
-                <div class="w-64 h-64 bg-white shadow rounded-xl flex flex-col items-center justify-center">
+                <div class="w-64 h-64 bg-white border border-gray-300 rounded-xl flex flex-col items-center justify-center">
                     <img src="/image/phone.png" class="h-28 object-contain mb-3">
                     <p class="font-semibold text-lg">SmartPhone</p>
                 </div>
 
-                <div class="w-64 h-64 bg-white shadow rounded-xl flex flex-col items-center justify-center">
+                <div class="w-64 h-64 bg-white border border-gray-300 rounded-xl flex flex-col items-center justify-center">
                     <img src="/image/headphone.png" class="h-28 object-contain mb-3">
                     <p class="font-semibold text-lg">Headphones</p>
                 </div>
 
-                <div class="w-64 h-64 bg-white shadow rounded-xl flex flex-col items-center justify-center">
+                <div class="w-64 h-64 bg-white border border-gray-300 rounded-xl flex flex-col items-center justify-center">
                     <img src="/image/keyboard.png" class="h-28 object-contain mb-3">
                     <p class="font-semibold text-lg">Accessories</p>
                 </div>
 
-                <div class="w-64 h-64 bg-white shadow rounded-xl flex flex-col items-center justify-center">
+                <div class="w-64 h-64 bg-white border border-gray-300 rounded-xl flex flex-col items-center justify-center">
                     <img src="/image/camera.png" class="h-28 object-contain mb-3">
                     <p class="font-semibold text-lg">Camera & Photo</p>
                 </div>
 
-                <div class="w-64 h-64 bg-white shadow rounded-xl flex flex-col items-center justify-center">
+                <div class="w-64 h-64 bg-white border border-gray-300 rounded-xl flex flex-col items-center justify-center">
                     <img src="/image/tv.png" class="h-28 object-contain mb-3">
                     <p class="font-semibold text-lg">TV & Homes</p>
                 </div>
@@ -633,7 +690,7 @@
 
 
     <!-- Card2 -->
-    <div class="px-4 sm:px-6 lg:px-8 mt-16 lg:mt-24">
+    <div class="px-5 sm:px-6 lg:px-8 mt-16 lg:mt-24">
         <div class="container mx-auto flex flex-col lg:flex-row gap-10">
     
             <div class="w-[312px] bg-[#F3DE6D] rounded-md overflow-hidden h-auto flex-shrink-0 mx-auto">
@@ -689,7 +746,7 @@
 
 
 
-    <section class="p-6 md:p-10">
+    <section class="p-5 md:p-10">
         <div class="container mx-auto grid grid-cols-1 xl:grid-cols-2 gap-6 mt-10">
     
     
@@ -727,7 +784,7 @@
     </section>
 
 
-    <div class="px-4 sm:px-6 lg:px-8 mt-16 lg:mt-24 mb-24">
+    <div class="px-5 sm:px-6 lg:px-8 mt-16 lg:mt-24 mb-24">
         <div class="container mx-auto flex flex-col lg:flex-row gap-10">
     
             <div class="flex-1 min-w-0 mx-auto">
@@ -811,13 +868,12 @@
 
     <!-- Mubashsher project -->
     <section class="bg-[#FFE7D6] py-10 sm:py-20 overflow-hidden">
-        <div class="container mx-auto px-4 max-w-7xl">
+        <div class="container mx-auto px-4 ">
             <div class="flex flex-col lg:flex-row justify-between items-center relative">
     
                 <div class="flex flex-col gap-6 lg:gap-8 text-center lg:text-left mb-10 lg:mb-0 lg:w-1/2">
     
-                    <p
-                        class="bg-[#2DA5F3] w-48 py-1.5 mx-auto lg:mx-0 flex justify-center font-semibold text-white text-sm">
+                    <p class="bg-[#2DA5F3] w-40 py-3 mx-auto lg:mx-0 flex justify-center font-semibold text-white text-sm">
                         SAVE UP TO $200.00
                     </p>
     
@@ -828,7 +884,7 @@
                     </p>
     
                     <button
-                        class="bg-[#FA8232] flex gap-2 text-lg text-white w-48 py-3.5 mx-auto lg:mx-0 justify-center items-center hover:bg-[#D4712A] transition duration-300 rounded">
+                        class="bg-[#FA8232] uppercase flex gap-2 text-lg text-white w-48 py-3.5 mx-auto lg:mx-0 justify-center items-center hover:bg-[#D4712A] transition duration-300 rounded">
                         Shop now <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                             xmlns="http://www.w3.org/2000/svg">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -841,7 +897,7 @@
                     class=" w-full max-w-lg lg:max-w-none mx-auto lg:w-1/2 flex justify-center lg:justify-end items-center relative ">
     
     
-                    <img src="./image/Discount.png" alt="" class="absolute md:left-10 top-10 hidden sm:block">
+                    <img src="./image/Discount.png" alt="" class="absolute md:left-40 top-10 hidden sm:block">
                     <img src="./image/Image.png" alt="Macbook Pro" class="w-full h-auto max-w-xl object-contain  ">
     
     
@@ -971,7 +1027,7 @@
     <section class="container mx-auto py-16 px-4">
         <h2 class="text-3xl font-semibold text-center mb-12">Latest News</h2>
     
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <div class="bg-white shadow p-6 rounded-lg border border-gray-200">
                 <img src="./image/unsplash_iZVrfElG1t0.png" alt="watch" class="rounded-md mb-4 w-full h-auto">
                 <div class="flex flex-wrap items-center gap-4 text-sm text-gray-500 mb-3">
@@ -1042,7 +1098,7 @@
                 </h3>
                 <p class="text-gray-600 mb-4">
                     Pellentesque vestibulum lorem vel gravida aliquam. Morbi porta, odio id suscipit mattis, risus augue
-                    condimentum purus.
+                    condimentum.
                 </p>
                 <a href="#"
                     class="inline-flex items-center text-orange-500 font-semibold border border-[#FFE7D6] p-3 hover:bg-[#FFE7D6] transition duration-300">
@@ -1050,48 +1106,29 @@
                 </a>
             </div>
     
-            <div class="bg-white shadow p-6 rounded-lg border border-gray-200">
-                <img src="./image/unsplash_iZVrfElG1t0.png" alt="laptop" class="rounded-md mb-4 w-full h-auto">
-                <div class="flex flex-wrap items-center gap-4 text-sm text-gray-500 mb-3">
-                    <span class="flex items-center gap-1">
-                        <img src="./image/UserCircle.png" alt="Author Icon"> Mark
-                    </span>
-                    <span class="flex items-center gap-1">
-                        <img src="./image/CalendarBlank.png" alt="Date Icon"> 1 Jan, 2025
-                    </span>
-                    <span class="flex items-center gap-1">
-                        <img src="./image/ChatCircleDots.png" alt="Comments Icon"> 102
-                    </span>
-                </div>
-                <h3 class="font-semibold text-lg mb-2">
-                    Suspendisse potenti. Fusce ac felis sit amet sapien elementum varius.
-                </h3>
-                <p class="text-gray-600 mb-4">
-                    Vivamus interdum felis a dictum laoreet. Maecenas tristique, purus vel convallis mollis, odio nunc
-                    eleifend.
-                </p>
-                <a href="#"
-                    class="inline-flex items-center text-orange-500 font-semibold border border-[#FFE7D6] p-3 hover:bg-[#FFE7D6] transition duration-300">
-                    READ MORE →
-                </a>
-            </div>
+    
         </div>
     </section>
     
     <section class="bg-[#1B6392] py-16 flex justify-center flex-col items-center gap-5 px-4">
-        <p class="text-center text-xl sm:text-3xl text-white font-semibold ">Subscribe to our newsletter</p>
+        <p class="text-center uper text-xl sm:text-3xl text-white font-semibold ">Subscribe to our newsletter</p>
         <p class="text-center text-gray-300 text-sm max-w-xl">Praesent fringilla erat a lacinia egestas. Donec vehicula
             tempor
             libero et <br class="hidden sm:inline"> cursus. Donec non quam urna. Quisque vitae porta ipsum.</p>
         <div class="bg-white w-full max-w-lg flex justify-between p-1 sm:p-2 h-15 mt-3">
             <input id="msg" type="email" placeholder="Email address" class="text-[#77878F] text-sm px-3 outline-none w-2/3">
             <button
-                class="w-1/4 py-2 flex items-center justify-center bg-[#FA8232] text-white gap-3 hover:bg-orange-600 transition duration-300"
-                onclick="sendTelegram()">Send
-                <img src="./image/ArrowRight1.png" alt=""></button>
+                class="w-45 px-2  flex font-semibold text-[18px] rounded-[3px] items-center justify-center bg-[#FA8232] text-white gap-2 hover:bg-orange-600 transition duration-300 items-center"
+                onclick="sendTelegram()">Subscribe
+                <img src="./image/myRight.png" alt="" class="flex items-center"></button>
         </div>
         <div class="border-t border-gray-500 mt-6 pt-4">
-            <img src="./image/Logo.png" alt="Logo">
+            <img src="./image/Logo.png" alt="Logo" class="flex items-center hidden md:block">
+            <div class="flex items-center gap-10 md:hidden ">
+                <img src="/image/google-2015 1.png" alt="">
+                <img src="/image/amazon.png" alt="">
+                <img src="/image/samsung-4 1.png" alt="">
+            </div>
         </div>
     </section>
     
@@ -1101,7 +1138,9 @@
     
             <div class="space-y-4 text-center md:text-left">
                 <div class="flex items-center justify-center md:justify-start">
-                    <span class="text-orange-500 text-3xl font-bold">CLICON</span>
+                    <span
+                        class="text-white text-3xl font-bold flex itec:\Users\toxta\Downloads\samsung-4 1.png c:\Users\toxta\Downloads\amazon.png c:\Users\toxta\Downloads\google-2015 1.pngms-center gap-2">
+                        <img src="/image/nnnn.png" alt="">CLICON</span>
                 </div>
                 <div class="text-sm space-y-2">
                     <p>Customer Supports:</p>
@@ -1112,18 +1151,36 @@
                 </div>
             </div>
     
-            <div class="text-center md:text-left">
-                <h3 class="text-white text-lg font-semibold mb-4">TOP CATEGORY</h3>
+            <div class="text-center  md:text-left">
+                <h3 class="text-white text-lg font-semibold mb-4 pl-5">TOP CATEGORY</h3>
                 <ul class="space-y-2 text-sm">
-                    <li><a href="#" class="hover:text-yellow-500 transition-colors">Computer & Laptop</a></li>
-                    <li><a href="#" class="hover:text-yellow-500 transition-colors">SmartPhone</a></li>
-                    <li><a href="#" class="hover:text-yellow-500 transition-colors">Headphone</a></li>
-                    <li><a href="#" class="hover:text-yellow-500 transition-colors">Accessories</a></li>
-                    <li><a href="#" class="hover:text-yellow-500 transition-colors">Camera & Photo</a></li>
-                    <li><a href="#" class="hover:text-yellow-500 transition-colors">TV & Homes</a></li>
+                    <li><a href="#" class="relative pl-5 hover:text-yellow-400 
+                before:content-[''] before:absolute before:left-0 before:top-1/2 
+                before:-translate-y-1/2 before:h-[2px] before:bg-yellow-400 
+                before:w-0 hover:before:w-3 before:transition-all">Computer & Laptop</a></li>
+                    <li><a href="#" class="relative pl-5 hover:text-yellow-400 
+                before:content-[''] before:absolute before:left-0 before:top-1/2 
+                before:-translate-y-1/2 before:h-[2px] before:bg-yellow-400 
+                before:w-0 hover:before:w-3 before:transition-all">SmartPhone</a></li>
+                    <li><a href="#" class="relative pl-5 hover:text-yellow-400 
+                before:content-[''] before:absolute before:left-0 before:top-1/2 
+                before:-translate-y-1/2 before:h-[2px] before:bg-yellow-400 
+                before:w-0 hover:before:w-3 before:transition-all">Headphone</a></li>
+                    <li><a href="#" class="relative pl-5 hover:text-yellow-400 
+                before:content-[''] before:absolute before:left-0 before:top-1/2 
+                before:-translate-y-1/2 before:h-[2px] before:bg-yellow-400 
+                before:w-0 hover:before:w-3 before:transition-all">Accessories</a></li>
+                    <li><a href="#" class="relative pl-5 hover:text-yellow-400 
+                before:content-[''] before:absolute before:left-0 before:top-1/2 
+                before:-translate-y-1/2 before:h-[2px] before:bg-yellow-400 
+                before:w-0 hover:before:w-3 before:transition-all">Camera & Photo</a></li>
+                    <li><a href="#" class="relative pl-5 hover:text-yellow-400 
+                before:content-[''] before:absolute before:left-0 before:top-1/2 
+                before:-translate-y-1/2 before:h-[2px] before:bg-yellow-400 
+                before:w-0 hover:before:w-3 before:transition-all">TV & Homes</a></li>
                 </ul>
                 <a href="#"
-                    class="text-orange-500 font-medium mt-4 flex items-center justify-center md:justify-start group">
+                    class="text-orange-500 font-medium mt-4 flex items-center justify-center md:justify-start group pl-5">
                     Browse All Product
                     <svg class="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" fill="none"
                         stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -1134,15 +1191,36 @@
             </div>
     
             <div class="text-center md:text-left">
-                <h3 class="text-white text-lg font-semibold mb-4">QUICK LINKS</h3>
+                <h3 class="text-white text-lg font-semibold mb-4 pl-5">QUICK LINKS</h3>
                 <ul class="space-y-2 text-sm">
-                    <li><a href="#" class="hover:text-yellow-500 transition-colors">Shop Product</a></li>
-                    <li><a href="#" class="hover:text-yellow-500 transition-colors">Shoping Cart</a></li>
-                    <li><a href="#" class="hover:text-yellow-500 transition-colors">Wishlist</a></li>
-                    <li><a href="#" class="hover:text-yellow-500 transition-colors">Compare</a></li>
-                    <li><a href="#" class="hover:text-yellow-500 transition-colors">Track Order</a></li>
-                    <li><a href="#" class="hover:text-yellow-500 transition-colors">Customer Help</a></li>
-                    <li><a href="#" class="hover:text-yellow-500 transition-colors">About Us</a></li>
+                    <li><a href="#" class="relative pl-5 hover:text-yellow-400 
+                before:content-[''] before:absolute before:left-0 before:top-1/2 
+                before:-translate-y-1/2 before:h-[2px] before:bg-yellow-400 
+                before:w-0 hover:before:w-3 before:transition-all">Shop Product</a></li>
+                    <li><a href="#" class="relative pl-5 hover:text-yellow-400 
+                before:content-[''] before:absolute before:left-0 before:top-1/2 
+                before:-translate-y-1/2 before:h-[2px] before:bg-yellow-400 
+                before:w-0 hover:before:w-3 before:transition-all">Shoping Cart</a></li>
+                    <li><a href="#" class="relative pl-5 hover:text-yellow-400 
+                before:content-[''] before:absolute before:left-0 before:top-1/2 
+                before:-translate-y-1/2 before:h-[2px] before:bg-yellow-400 
+                before:w-0 hover:before:w-3 before:transition-all">Wishlist</a></li>
+                    <li><a href="#" class="relative pl-5 hover:text-yellow-400 
+                before:content-[''] before:absolute before:left-0 before:top-1/2 
+                before:-translate-y-1/2 before:h-[2px] before:bg-yellow-400 
+                before:w-0 hover:before:w-3 before:transition-all">Compare</a></li>
+                    <li><a href="#" class="relative pl-5 hover:text-yellow-400 
+                before:content-[''] before:absolute before:left-0 before:top-1/2 
+                before:-translate-y-1/2 before:h-[2px] before:bg-yellow-400 
+                before:w-0 hover:before:w-3 before:transition-all">Track Order</a></li>
+                    <li><a href="#" class="relative pl-5 hover:text-yellow-400 
+                before:content-[''] before:absolute before:left-0 before:top-1/2 
+                before:-translate-y-1/2 before:h-[2px] before:bg-yellow-400 
+                before:w-0 hover:before:w-3 before:transition-all">Customer Help</a></li>
+                    <li><a href="#" class="relative pl-5 hover:text-yellow-400 
+                before:content-[''] before:absolute before:left-0 before:top-1/2 
+                before:-translate-y-1/2 before:h-[2px] before:bg-yellow-400 
+                before:w-0 hover:before:w-3 before:transition-all">About Us</a></li>
                 </ul>
             </div>
     
@@ -1158,11 +1236,11 @@
                         </div>
                     </a>
                     <a href="#"
-                        class="flex items-center justify-center p-3 bg-[#303639] gap-6 transition-colors hover:bg-gray-700">
-                        <img src="./image/Apple---Negative 1.png" alt="Apple Store Icon">
+                        class="flex items-center justify-center p-3 bg-[#303639] gap-3 transition-colors hover:bg-gray-700">
+                        <img src="./image/Apple---Negative 1.png" alt="Google Play Icon">
                         <div class="text-white text-left">
                             <p class="text-xs">Get it now</p>
-                            <p class="text-xl font-medium">App Store</p>
+                            <p class="text-xl font-medium mr-5">App Store</p>
                         </div>
                     </a>
                 </div>

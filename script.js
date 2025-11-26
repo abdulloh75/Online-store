@@ -97,7 +97,7 @@ async function loadProducts() {
         <!-- Badge'lar -->
         <div class="absolute top-3 left-3 flex flex-col gap-1 z-10">
           <span class="bg-yellow-400 text-xs font-bold px-2 py-0.5 rounded">32% OFF</span>
-          <span class="bg-red-500 text-white text-xs font-bold px-2 py-0.5 rounded">HOT</span>
+          <span class="bg-red-500 text-white text-xs font-bold px-2 py-0.5 w-11 rounded">HOT</span>
         </div>
 
         <!-- Tepasi: rasm + rating -->
@@ -125,7 +125,7 @@ async function loadProducts() {
 
           <div class="flex items-center gap-2 mb-3">
             <span class="text-gray-400 line-through text-sm">$${product.price + 100}</span>
-            <span class="text-blue-600 font-bold text-xl">$${product.price}</span>
+            <span class="text-[#2DA5F3] font-bold text-xl">$${product.price}</span>
           </div>
 
           <p class="text-sm text-gray-500 mb-4 leading-relaxed line-clamp-3 md:line-clamp-none">
@@ -185,7 +185,7 @@ async function loadProducts() {
             <h3 class="text-sm text-gray-800 mb-2 leading-tight">${product.title}</h3>
 
             <div class="flex items-center gap-2">
-                <span class="text-blue-600 font-bold text-lg">$${product.price}</span>
+                <span class="text-[#2DA5F3] font-bold text-lg">$${product.price}</span>
             </div>
         </div>`;
     }
@@ -448,7 +448,7 @@ function renderCategories() {
     btn.textContent = cat;
 
     btn.className = `
-      relative px-3 py-3 text-[#5F6C72] text-sm font-medium
+      relative px-3 py-3 text-[#5F6C72] text-sm font-medium cursor-pointer
       after:absolute after:left-0 after:-bottom-1 after:w-full after:h-[2px] after:bg-[#FA8232]
       after:scale-x-0 after:origin-left after:transition-transform after:duration-300
       hover:text-black hover:after:scale-x-100
@@ -474,14 +474,14 @@ function renderProducts(products) {
     grid.innerHTML += `
       <div class="product-card bg-white p-5 relative border border-gray-200 h-auto lg:h-74 xl:h-78">
         <span class="absolute top-3 left-3 bg-gray-500 text-white text-xs font-bold px-2 py-0.5 rounded">SOLD OUT</span>
-        <div class="hover-icons hidden lg:flex">
-          <div class="hover-icon-btn" onclick="handleAddToCart(${p.id})"><i class="fas fa-shopping-cart text-gray-700"></i></div>
-          <div class="hover-icon-btn"><i class="far fa-heart text-gray-700"></i></div>
-          <div class="hover-icon-btn" onclick="handleOpenModal(${p.id})"><i class="far fa-eye text-gray-700"></i></div>
+        <div class="hover-iconss hidden lg:flex">
+          <div class="hover-icon-btnn" onclick="handleAddToCart(${p.id})"><i class="fas fa-shopping-cart text-gray-700"></i></div>
+          <div class="hover-icon-btnn"><i class="far fa-heart text-gray-700"></i></div>
+          <div class="hover-icon-btnn" onclick="handleOpenModal(${p.id})"><i class="far fa-eye text-gray-700"></i></div>
         </div>
         <img src="${p.thumbnail}" class="w-full h-48 object-contain mb-0">
         <h3 class="text-sm text-gray-800 mb-2">${p.title}</h3>
-        <span class="text-blue-600 font-bold text-lg">$${p.price}</span>
+        <span class="text-[#2DA5F3] font-bold text-lg">$${p.price}</span>
       </div>`;
   });
 }
@@ -513,7 +513,7 @@ function renderCategory() {
     btns.textContent = cat;
 
     btns.className = `
-      relative px-3 py-3 text-[#5F6C72] text-sm font-medium
+      relative px-3 py-3 text-[#5F6C72] text-sm font-medium cursor-pointer
       after:absolute after:left-0 after:-bottom-1 after:w-full after:h-[2px] after:bg-[#FA8232]
       after:scale-x-0 after:origin-left after:transition-transform after:duration-300
       hover:text-black hover:after:scale-x-100
@@ -539,14 +539,14 @@ function renderProductss(products) {
     grides.innerHTML += `
       <div class="product-card bg-white p-5 relative border border-gray-200 h-auto lg:h-74 xl:h-78">
         <span class="absolute top-3 left-3 bg-gray-500 text-white text-xs font-bold px-2 py-0.5 rounded">SOLD OUT</span>
-        <div class="hover-icons hidden lg:flex">
-          <div class="hover-icon-btn" onclick="handleAddToCart(${p.id})"><i class="fas fa-shopping-cart text-gray-700"></i></div>
-          <div class="hover-icon-btn"><i class="far fa-heart text-gray-700"></i></div>
-          <div class="hover-icon-btn" onclick="handleOpenModal(${p.id})"><i class="far fa-eye text-gray-700"></i></div>
+        <div class="hover-iconss hidden lg:flex">
+          <div class="hover-icon-btnn" onclick="handleAddToCart(${p.id})"><i class="fas fa-shopping-cart text-gray-700"></i></div>
+          <div class="hover-icon-btnn"><i class="far fa-heart text-gray-700"></i></div>
+          <div class="hover-icon-btnn" onclick="handleOpenModal(${p.id})"><i class="far fa-eye text-gray-700"></i></div>
         </div>
         <img src="${p.thumbnail}" class="w-full h-48 object-contain mb-0">
         <h3 class="text-sm text-gray-800 mb-2">${p.title}</h3>
-        <span class="text-blue-600 font-bold text-lg">$${p.price}</span>
+        <span class="text-[#2DA5F3] font-bold text-lg">$${p.price}</span>
       </div>`;
   });
 }
