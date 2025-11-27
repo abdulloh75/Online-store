@@ -21,7 +21,7 @@ const total = 3;
 
 function goToSlide(i) {
   index = i;
-  slides.style.transform = `translateX(-${800 * index}px)`;
+  slides.style.transform = `translateX(-${924 * index}px)`;
 
   dots.forEach(d => d.classList.remove("bg-[#FA8232]"));
   dots[index].classList.add("bg-[#FA8232]");

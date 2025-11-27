@@ -280,107 +280,114 @@
 </div>
 
 <!-- Mubashsher modal -->
-<div id="modal1" class="fixed inset-0 bg-black/40 hidden items-center justify-center z-50">
-    <div class="bg-white rounded-lg shadow-xl max-w-5xl w-full mx-4 relative">
+<!-- MODAL 1 -->
+<div id="modal1" class="fixed inset-0 bg-black/40 hidden z-50 items-center justify-center">
+    <div class="min-h-screen flex items-center justify-center">
+        <div class="bg-white rounded-lg shadow-xl max-w-3xl w-full mx-4 relative overflow-y-auto max-h-[90vh]">
+            <button onclick="closeModal1()"
+                class="absolute top-4 right-4 w-9 h-9 rounded-full border flex items-center justify-center hover:bg-gray-100">
+                ✕
+            </button>
 
-        <!-- Close button -->
-        <button onclick="closeModal1()"
-            class="absolute top-4 right-4 w-9 h-9 rounded-full border flex items-center justify-center hover:bg-gray-100">
-            ✕
-        </button>
-        <div class="bg-white shadow p-6 rounded-lg border border-gray-200">
-            <img src="./image/unsplash_iZVrfElG1t0.png" alt="watch" class="rounded-md mb-4 w-full h-auto">
-            <div class="flex flex-wrap items-center gap-4 text-sm text-gray-500 mb-3">
-                <span class="flex items-center gap-1">
-                    <img src="./image/UserCircle.png" alt="Author Icon"> Kristin
-                </span>
-                <span class="flex items-center gap-1">
-                    <img src="./image/CalendarBlank.png" alt="Date Icon"> 19 Dec, 2013
-                </span>
-                <span class="flex items-center gap-1">
-                    <img src="./image/ChatCircleDots.png" alt="Comments Icon"> 453
-                </span>
+            <div class="bg-white p-6 rounded-lg">
+                <img src="./image/unsplash_iZVrfElG1t0.png" alt="watch" class="rounded-md mb-4 w-full h-auto">
+
+                <div class="flex flex-wrap items-center gap-4 text-sm text-gray-500 mb-3">
+                    <span class="flex items-center gap-1">
+                        <img src="./image/UserCircle.png" alt="Author Icon"> Kristin
+                    </span>
+                    <span class="flex items-center gap-1">
+                        <img src="./image/CalendarBlank.png" alt="Date Icon"> 19 Dec, 2013
+                    </span>
+                    <span class="flex items-center gap-1">
+                        <img src="./image/ChatCircleDots.png" alt="Comments Icon"> 453
+                    </span>
+                </div>
+
+                <h3 class="font-semibold text-lg mb-2">
+                    Cras nisl dolor, accumsan et metus sit amet, vulputate condimentum dolor.
+                </h3>
+                <p class="text-gray-600 mb-4">
+                    Maecenas scelerisque, arcu quis tempus egestas, ligula diam molestie tincidunt malesuada
+                    arcu metus posuere metus.
+                </p>
             </div>
-            <h3 class="font-semibold text-lg mb-2">
-                Cras nisl dolor, accumsan et metus sit amet, vulputate condimentum dolor.
-            </h3>
-            <p class="text-gray-600 mb-4">
-                Maecenas scelerisque, arcu quis tempus egestas, ligula diam molestie tincidunt malesuada
-                arcu metus posuere metus.
-            </p>
-
         </div>
     </div>
 </div>
 
-<!-- Modal 22222222222 -->
+<!-- MODAL 2 -->
+<div id="modal2" class="fixed inset-0 bg-black/40 hidden z-50 items-center justify-center">
+    <div class="min-h-screen flex items-center justify-center">
+        <div class="bg-white rounded-lg shadow-xl max-w-3xl w-full mx-4 relative overflow-y-auto max-h-[90vh]">
+            <button onclick="closeModal2()"
+                class="absolute top-4 right-4 w-9 h-9 rounded-full border flex items-center justify-center hover:bg-gray-100">
+                ✕
+            </button>
 
-<div id="modal2" class="fixed inset-0 bg-black/40 hidden items-center justify-center z-50">
-    <div class="bg-white rounded-lg shadow-xl max-w-5xl w-full mx-4 relative">
+            <div class="bg-white p-6 rounded-lg">
+                <img src="./image/unsplash_FO7JIlwjOtU.png" alt="circuit" class="rounded-md mb-4 w-full h-auto">
 
-        <!-- Close button -->
-        <button onclick="closeModal2()"
-            class="absolute top-4 right-4 w-9 h-9 rounded-full border flex items-center justify-center hover:bg-gray-100">
-            ✕
-        </button>
-        <div class="bg-white shadow p-7 rounded-lg border border-gray-200">
-            <img src="./image/unsplash_FO7JIlwjOtU.png" alt="circuit" class="rounded-md mb-4 w-full h-auto">
-            <div class="flex flex-wrap items-center gap-4 text-sm text-gray-500 mb-3">
-                <span class="flex items-center gap-1">
-                    <img src="./image/UserCircle.png" alt="Author Icon"> Robert
-                </span>
-                <span class="flex items-center gap-1">
-                    <img src="./image/CalendarBlank.png" alt="Date Icon"> 28 Nov, 2015
-                </span>
-                <span class="flex items-center gap-1">
-                    <img src="./image/ChatCircleDots.png" alt="Comments Icon"> 738
-                </span>
+                <div class="flex flex-wrap items-center gap-4 text-sm text-gray-500 mb-3">
+                    <span class="flex items-center gap-1">
+                        <img src="./image/UserCircle.png" alt="Author Icon"> Robert
+                    </span>
+                    <span class="flex items-center gap-1">
+                        <img src="./image/CalendarBlank.png" alt="Date Icon"> 28 Nov, 2015
+                    </span>
+                    <span class="flex items-center gap-1">
+                        <img src="./image/ChatCircleDots.png" alt="Comments Icon"> 738
+                    </span>
+                </div>
+
+                <h3 class="font-semibold text-lg mb-2">
+                    Curabitur pulvinar aliquam lectus, non blandit erat mattis vitae.
+                </h3>
+                <p class="text-gray-600 mb-4">
+                    Mauris scelerisque odio id rutrum volutpat. Pellentesque urna odio, vulputate at tortor vitae,
+                    hendrerit blandit lorem.
+                </p>
             </div>
-            <h3 class="font-semibold text-lg mb-2">
-                Curabitur pulvinar aliquam lectus, non blandit erat mattis vitae.
-            </h3>
-            <p class="text-gray-600 mb-4">
-                Mauris scelerisque odio id rutrum volutpat. Pellentesque urna odio, vulputate at tortor vitae,
-                hendrerit blandit lorem.
-            </p>
-
         </div>
     </div>
 </div>
 
-<!-- Modal 3333333 -->
-<div id="modal3" class="fixed inset-0 bg-black/40 hidden items-center justify-center z-50">
-    <div class="bg-white rounded-lg shadow-xl max-w-5xl w-full mx-4 relative">
+<!-- MODAL 3 -->
+<div id="modal3" class="fixed inset-0 bg-black/40 hidden z-50 items-center justify-center">
+    <div class="min-h-screen flex items-center justify-center">
+        <div class="bg-white rounded-lg shadow-xl max-w-3xl w-full mx-4 relative overflow-y-auto max-h-[90vh]">
+            <button onclick="closeModal3()"
+                class="absolute top-4 right-4 w-9 h-9 rounded-full border flex items-center justify-center hover:bg-gray-100">
+                ✕
+            </button>
 
-        <!-- Close button -->
-        <button onclick="closeModal3()"
-            class="absolute top-4 right-4 w-9 h-9 rounded-full border flex items-center justify-center hover:bg-gray-100">
-            ✕
-        </button>
-        <div class="bg-white shadow p-7 rounded-lg border border-gray-200 ">
-            <img src="./image/unsplash_6MNmDi1hc_Y.png" alt="phone" class="rounded-md mb-4 w-full h-auto">
-            <div class="flex flex-wrap items-center gap-4 text-sm text-gray-500 mb-3">
-                <span class="flex items-center gap-1">
-                    <img src="./image/UserCircle.png" alt="Author Icon"> Arlene
-                </span>
-                <span class="flex items-center gap-1">
-                    <img src="./image/CalendarBlank.png" alt="Date Icon"> 9 May, 2014
-                </span>
-                <span class="flex items-center gap-1">
-                    <img src="./image/ChatCircleDots.png" alt="Comments Icon"> 826
-                </span>
+            <div class="bg-white p-6 rounded-lg">
+                <img src="./image/unsplash_6MNmDi1hc_Y.png" alt="phone" class="rounded-md mb-4 w-full h-auto">
+
+                <div class="flex flex-wrap items-center gap-4 text-sm text-gray-500 mb-3">
+                    <span class="flex items-center gap-1">
+                        <img src="./image/UserCircle.png" alt="Author Icon"> Arlene
+                    </span>
+                    <span class="flex items-center gap-1">
+                        <img src="./image/CalendarBlank.png" alt="Date Icon"> 9 May, 2014
+                    </span>
+                    <span class="flex items-center gap-1">
+                        <img src="./image/ChatCircleDots.png" alt="Comments Icon"> 826
+                    </span>
+                </div>
+
+                <h3 class="font-semibold text-lg mb-2">
+                    Curabitur massa orci, consectetur et blandit ac, auctor et tellus.
+                </h3>
+                <p class="text-gray-600 mb-4">
+                    Pellentesque vestibulum lorem vel gravida aliquam. Morbi porta, odio id suscipit mattis,
+                    risus augue condimentum.
+                </p>
             </div>
-            <h3 class="font-semibold text-lg mb-2">
-                Curabitur massa orci, consectetur et blandit ac, auctor et tellus.
-            </h3>
-            <p class="text-gray-600 mb-4">
-                Pellentesque vestibulum lorem vel gravida aliquam. Morbi porta, odio id suscipit mattis, risus augue
-                condimentum.
-            </p>
-
         </div>
     </div>
 </div>
+
 
 
 <body>
@@ -440,9 +447,9 @@
                 <p class="text-xl sm:text-3xl font-bold text-white">CLICON</p>
             </div>
             <div class="lg:flex hidden relative">
-                <input class="w-[615px] h-[48px] bg-white outline-hidden px-5" type="text"
+                <input class="w-[615px] h-[48px] bg-white outline-none px-5 pr-12 rounded-md" type="text"
                     placeholder="Search for anything...">
-                <img class="absolute left-145 top-3.5 cursor-pointer" src="image/MagnifyingGlass.png">
+                <img class="absolute right-3 top-1/2 -translate-y-1/2 cursor-pointer" src="image/MagnifyingGlass.png" alt="Search">
             </div>
             <div class="flex items-center gap-6">
                 <div class="relative">
@@ -540,6 +547,53 @@
                             </div>
                         </div>
 
+                        <div class="flex relative">
+                            <img class="animate-[float_2s_ease-in-out_infinite] w-[180px] sm:w-[250px] xl:w-auto"
+                                src="image/playstation.png">
+                            <p class="absolute left-65 text-white bg-[#2DA5F3] py-7 px-5 rounded-full border-3">$299</p>
+                        </div>
+                    </div>
+
+                    <div class="min-w-full flex justify-between items-center px-5">
+                        <div class="pl-5 flex flex-col gap-5 relative">
+                            <div class="flex items-center gap-1">
+                                <img src="image/Devider.png">
+                                <p class="text-[#2484C2] text-sm font-semibold">THE BEST PLACE TO PLAY</p>
+                            </div>
+                            <p class="text-3xl sm:text-4xl xl:text-5xl font-semibold">Xbox Consoles</p>
+                            <p class="text-[#475156] text-sm sm:text-lg xl:text-xl max-w-[356px]">Save up to 50% on
+                                select Xbox games.</p>
+                    
+                            <div
+                                class="bg-[#FA8232] flex text-white w-[150px] sm:w-[191px] items-center justify-center py-2 sm:py-3 cursor-pointer gap-2 rounded-xs hover:bg-orange-600">
+                                <p class="text-sm sm:text-base">SHOP NOW</p>
+                                <img class="sm:block hidden" src="image/ArrowRight copy.png">
+                            </div>
+                        </div>
+                    
+                        <div class="flex relative">
+                            <img class="animate-[float_2s_ease-in-out_infinite] w-[180px] sm:w-[250px] xl:w-auto"
+                                src="image/playstation.png">
+                            <p class="absolute left-65 text-white bg-[#2DA5F3] py-7 px-5 rounded-full border-3">$299</p>
+                        </div>
+                    </div>
+                    <div class="min-w-full flex justify-between items-center px-5">
+                        <div class="pl-5 flex flex-col gap-5 relative">
+                            <div class="flex items-center gap-1">
+                                <img src="image/Devider.png">
+                                <p class="text-[#2484C2] text-sm font-semibold">THE BEST PLACE TO PLAY</p>
+                            </div>
+                            <p class="text-3xl sm:text-4xl xl:text-5xl font-semibold">Xbox Consoles</p>
+                            <p class="text-[#475156] text-sm sm:text-lg xl:text-xl max-w-[356px]">Save up to 50% on
+                                select Xbox games.</p>
+                    
+                            <div
+                                class="bg-[#FA8232] flex text-white w-[150px] sm:w-[191px] items-center justify-center py-2 sm:py-3 cursor-pointer gap-2 rounded-xs hover:bg-orange-600">
+                                <p class="text-sm sm:text-base">SHOP NOW</p>
+                                <img class="sm:block hidden" src="image/ArrowRight copy.png">
+                            </div>
+                        </div>
+                    
                         <div class="flex relative">
                             <img class="animate-[float_2s_ease-in-out_infinite] w-[180px] sm:w-[250px] xl:w-auto"
                                 src="image/playstation.png">
@@ -973,8 +1027,8 @@
 
 
     <!-- Mubashsher project -->
-    <section class="bg-[#FFE7D6] py-10 sm:py-20 overflow-hidden">
-        <div class="container mx-auto px-4 ">
+    <section class="py-10 sm:py-20 overflow-hidden">
+        <div class="container mx-auto px-16 bg-[#FFE7D6]">
             <div class="flex flex-col lg:flex-row justify-between items-center relative">
 
                 <div class="flex flex-col gap-6 lg:gap-8 text-center lg:text-left mb-10 lg:mb-0 lg:w-1/2">
